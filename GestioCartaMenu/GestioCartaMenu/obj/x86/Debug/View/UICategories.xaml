@@ -1,0 +1,21 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="GestioCartaMenu.View.UICategories"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioCartaMenu.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="40"
+    d:DesignWidth="200" x:Name="ucCategoria"                            >
+
+    <Grid Background="White">
+        <StackPanel x:ConnectionId='2' Orientation="Horizontal" x:Name="stp" VerticalAlignment="Center">
+            <TextBlock Text="Codi: " FontSize="15" FontWeight="Bold"></TextBlock>
+            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding ElementName=ucCategoria, Path=Catagoria.Codi}" Margin="5 0 0 0"></TextBlock>
+            <TextBlock FontSize="15" FontWeight="Bold" Text="Nom:  " Margin="10 0 0 0"></TextBlock>
+            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding ElementName=ucCategoria, Path=Catagoria.Nom}"  Margin="5 0 0 0"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
+
