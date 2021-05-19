@@ -37,7 +37,7 @@ INSERT INTO CATEGORIA VALUES (2,'PEIX','#33FFFC');
 INSERT INTO CATEGORIA VALUES (3,'JAPONES','#FCFF33');
 INSERT INTO CATEGORIA VALUES (4,'VEGÀ','#68FF33');
 
-INSERT INTO PLAT VALUES (1,'Entrecot a la Brasa','350 grams de entrecot fet a la brasa amb guarnicio de patates amb all i oli',20.99,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/entrecot.jpg'),true,1);
+INSERT INTO PLAT VALUES (1,'Entrecot a la Brasa','Entrecot fet a la brasa amb guarnicio de patates amb all i oli',20.99,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/entrecot.jpg'),true,1);
 INSERT INTO PLAT VALUES (2,'Llagostins a la Brasa','Llagostins de palamòs a la brasa amb all i julibert',10.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/llagostins.jpg'),true,2);
 INSERT INTO PLAT VALUES (3,'Sashami de tonyina','10 unitats de Sashami de tonyina',16.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/sashimi.jpg'),true,3);
 INSERT INTO PLAT VALUES (4,'Mongetes amb butifarra','Butifara del país feta a la brasa amb guarnició de mongetes i all i oli',10.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/buti.jpg'),true,1);

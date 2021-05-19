@@ -132,6 +132,9 @@
     <Compile Include="View\UICategories.xaml.cs">
       <DependentUpon>UICategories.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UIPlat.xaml.cs">
+      <DependentUpon>UIPlat.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UICategories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UIPlat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

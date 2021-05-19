@@ -40,7 +40,7 @@ namespace GestioCartaMenu
                     t = typeof(Cuina);
                     break;
             }
-            frame.Navigate(t);
+            frame.Navigate(t);  
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

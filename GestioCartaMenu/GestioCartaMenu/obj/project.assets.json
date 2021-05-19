@@ -763,6 +763,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1224,7 +1233,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -2342,6 +2353,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -2859,7 +2879,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -3999,6 +4021,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4516,7 +4547,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -5656,6 +5689,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6173,7 +6215,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -7291,6 +7335,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -7808,7 +7861,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -8948,6 +9003,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -9465,7 +9529,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -10583,6 +10649,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -11100,7 +11175,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -12240,6 +12317,15 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Drawing.Common/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
       "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -12757,7 +12843,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MySql.Data.EntityFrameworkCore": "8.0.22"
+          "Microsoft.UI.Xaml": "2.5.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "System.Drawing.Common": "5.0.2"
         },
         "compile": {
           "bin/placeholder/MySQL.dll": {}
@@ -18769,6 +18857,48 @@
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
         "system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Drawing.Common/5.0.2": {
+      "sha512": "rvr/M1WPf24ljpvvrVd74+NdjRUJu1bBkspkZcnzSZnmAUQWSvanlQ0k/hVHk+cHufZbZfu7vOh/vYc0q5Uu/A==",
+      "type": "package",
+      "path": "system.drawing.common/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.5.0.2.nupkg.sha512",
+        "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]

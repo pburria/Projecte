@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3nSzv0Za69Fx9GNbaTJY8xsMMXySwUdWdOY35Rn70J+27AlhG8Nv+BukAcDK+LrnY83n1uVCDl9ywRVeDbs4Ag==",
+  "dgSpecHash": "I22Kc/567h1qOkr02h5PZ2I1W+WJ2654EGBNFspfdz76aKFjT8KTUm54Wroe/fNDAPtjvAmoc4xRJW68B1uSVw==",
   "success": true,
   "projectFilePath": "D:\\cromp\\2n DAM\\Projecte\\GestioCartaMenu\\MySQL\\MySQL.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\cromp\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.1\\microsoft.extensions.primitives.3.1.1.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\cromp\\.nuget\\packages\\microsoft.ui.xaml\\2.5.0\\microsoft.ui.xaml.2.5.0.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\mysql.data\\8.0.22\\mysql.data.8.0.22.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\mysql.data.entityframeworkcore\\8.0.22\\mysql.data.entityframeworkcore.8.0.22.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
@@ -47,6 +48,7 @@
     "C:\\Users\\cromp\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\system.diagnostics.tools.4.0.1.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\system.diagnostics.tracesource\\4.0.0\\system.diagnostics.tracesource.4.0.0.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\system.diagnostics.tracing\\4.1.0\\system.diagnostics.tracing.4.1.0.nupkg.sha512",
+    "C:\\Users\\cromp\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\system.dynamic.runtime\\4.0.11\\system.dynamic.runtime.4.0.11.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\system.globalization\\4.0.11\\system.globalization.4.0.11.nupkg.sha512",
     "C:\\Users\\cromp\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",

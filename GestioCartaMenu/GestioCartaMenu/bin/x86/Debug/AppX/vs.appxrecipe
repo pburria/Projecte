@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-18T03:07:11.952</Modified>
+      <Modified>2021-05-19T00:21:15.518</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\GestioCartaMenu.exe">
       <PackagePath>entrypoint\GestioCartaMenu.exe</PackagePath>
-      <Modified>2021-05-18T03:07:10.008</Modified>
+      <Modified>2021-05-19T00:21:08.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -162,6 +162,10 @@
       <PackagePath>System.Diagnostics.DiagnosticSource.dll</PackagePath>
       <Modified>2019-11-15T07:54:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.drawing.common\5.0.2\lib\netstandard2.0\System.Drawing.Common.dll">
+      <PackagePath>System.Drawing.Common.dll</PackagePath>
+      <Modified>2021-01-19T19:29:18.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.runtime.compilerservices.unsafe\4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
       <Modified>2019-11-15T07:37:58.000</Modified>
@@ -180,7 +184,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.dll">
       <PackagePath>MySQL.dll</PackagePath>
-      <Modified>2021-05-18T01:59:09.888</Modified>
+      <Modified>2021-05-19T00:10:28.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -226,27 +230,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\GestioCartaMenu.xr.xml">
       <PackagePath>GestioCartaMenu.xr.xml</PackagePath>
-      <Modified>2021-05-18T03:07:09.665</Modified>
+      <Modified>2021-05-18T20:13:17.129</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-18T03:07:09.703</Modified>
+      <Modified>2021-05-19T00:21:07.184</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
-      <Modified>2021-05-18T03:07:09.703</Modified>
+      <Modified>2021-05-19T00:21:07.184</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\Carta.xbf">
       <PackagePath>View\Carta.xbf</PackagePath>
-      <Modified>2021-05-18T03:07:09.703</Modified>
+      <Modified>2021-05-19T00:21:07.171</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\Cuina.xbf">
       <PackagePath>View\Cuina.xbf</PackagePath>
-      <Modified>2021-05-18T03:07:09.704</Modified>
+      <Modified>2021-05-19T00:21:07.185</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\UICategories.xbf">
       <PackagePath>View\UICategories.xbf</PackagePath>
-      <Modified>2021-05-18T03:07:09.704</Modified>
+      <Modified>2021-05-19T00:21:07.185</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\UIPlat.xbf">
+      <PackagePath>View\UIPlat.xbf</PackagePath>
+      <Modified>2021-05-19T00:21:07.185</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -262,11 +270,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-18T02:38:03.809</Modified>
+      <Modified>2021-05-18T13:42:33.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\Core\GestioCartaMenu.exe">
       <PackagePath>GestioCartaMenu.exe</PackagePath>
-      <Modified>2021-05-18T03:07:11.947</Modified>
+      <Modified>2021-05-19T00:21:15.477</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

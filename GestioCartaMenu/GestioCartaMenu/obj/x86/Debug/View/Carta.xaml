@@ -18,12 +18,12 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="20 0 0 0">
+            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="20 10 0 0">
                 <TextBlock Text="LLISTAT CATEGORIES: " FontSize="20" FontWeight="Bold"></TextBlock>
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" Width="300" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top">
-                    <ListView x:ConnectionId='2'  x:Name="lsvCategories" Margin="0 10 0 0"                                                  >
+                    <ListView x:ConnectionId='19'  x:Name="lsvCategories"                                                   >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <local:UICategories Catagoria="{Binding}"></local:UICategories>
@@ -37,7 +37,67 @@
                         </ListView.ItemContainerStyle>
                     </ListView>
                 </ScrollViewer>
+                <Button x:ConnectionId='18' Content="MOSTRAR TOTS ELS PLATS" x:Name="btnTotsPlats"                            Margin="0 10 0 0" HorizontalAlignment="Center" ></Button>
             </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="20 10 0 0">
+                <TextBlock Text="LLISTAT PLATS: " HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" Width="700" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top">
+                    <ListView x:ConnectionId='16'  x:Name="lsvPlats" Margin="0 10 0 0"                                             >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <local:UIPlat Plat="{Binding}"></local:UIPlat>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment"
+                                Value="Stretch"></Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                </ScrollViewer>
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <TextBox x:ConnectionId='13' x:Name="txbTextFiltre" Width="300" Height="30"></TextBox>
+                    <Button x:ConnectionId='14' x:Name="btnFiltre"                         FontFamily="Segoe MDL2 Assets" Content="&#xE71C;" Width="35" Height="30"></Button>
+                    <Button x:ConnectionId='15' Content="BORRAR PLAT" x:Name="btnDeletePlat"                             HorizontalAlignment="Center" Margin="80 0 0 0"></Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.6*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="INSERCIÓ DE UN NOU PLAT" Grid.ColumnSpan="2" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 20 0 0"></TextBlock>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 40 0 0">
+                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                    <TextBlock Text="Nom: " FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:ConnectionId='11' x:Name="txbNom" Width="400" Margin="53 0 0 0" FontSize="15"                                 ></TextBox>
+                    <TextBlock x:ConnectionId='12' x:Name="errNom" Foreground="Red" Margin="10 0 0 0" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Text="Descripció: " FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:ConnectionId='9' x:Name="txbDescripcio" Width="400" TextWrapping="Wrap" Margin="13 0 0 0" FontSize="15"                                        ></TextBox>
+                    <TextBlock x:ConnectionId='10' x:Name="errDesc" Foreground="Red" Margin="10 0 0 0" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Text="Preu: " FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:ConnectionId='7' x:Name="txbPreu" Width="200" Margin="53 0 0 0" FontSize="15"                                  ></TextBox>
+                    <TextBlock x:ConnectionId='8' x:Name="errPreu" Foreground="Red" Margin="10 0 0 0" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Text="Disponible: " FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <ComboBox x:ConnectionId='6' x:Name="cmbDisponible" Margin="10 0 0 0" Width="200"                                                  ></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Text="Categoria: " FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <ComboBox x:ConnectionId='5' x:Name="cmbCategories" Width="200" Margin="16 0 0 0"                                                  ></ComboBox>
+                </StackPanel>
+                <Button x:ConnectionId='3' Content="FOTO" x:Name="btnFoto"                       Margin="10 10 0 0" Width="100"></Button>
+                <Button x:ConnectionId='4' IsEnabled="False" HorizontalAlignment="Center" Content="INSERIR PLAT" x:Name="btnInserirPlat"                              Margin="10 10 0 0" Width="200"></Button>
+            </StackPanel>
+            <Image x:ConnectionId='2' x:Name="fotoNouPlat" Grid.Column="1" Width="300" Height="300" Margin="0 20 0 0"></Image>
         </Grid>
     </Grid>
 </Page>

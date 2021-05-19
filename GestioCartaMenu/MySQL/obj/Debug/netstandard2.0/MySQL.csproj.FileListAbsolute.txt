@@ -3,6 +3,7 @@ D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.dl
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.AssemblyInfoInputs.cache
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.AssemblyInfo.cs
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.pdb
-D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.csproj.CoreCompileInputs.cache
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.dll
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.pdb
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.csprojAssemblyReference.cache
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\obj\Debug\netstandard2.0\MySQL.csproj.CoreCompileInputs.cache

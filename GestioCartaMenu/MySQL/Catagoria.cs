@@ -9,7 +9,7 @@ namespace MySQL
     public class Catagoria
     {
         private int codi;
-        private string nom; //40
+        private string nom; 
         private string color;
 
         public Catagoria(int codi, string nom, string color)
@@ -60,6 +60,10 @@ namespace MySQL
 
             }
             return null;
+        }
+        public override string ToString()
+        {
+            return Nom;
         }
         /*
         public static List<Catagoria> getEquipsAmbJugadors()
@@ -262,110 +266,9 @@ namespace MySQL
             }
             return false;
         }
-        public static bool InsertEquips(int id, string name, string fullName, string teamChief, string chassis, string powerUnit,
-                                             int firstTeamEntry, int worldChampionship, int fastedLaps, string desc,string icon,string cotxe)
-        {
-
-            try
-            {
-                DbTransaction trans = null;
-
-                using (Formula1BD context = new Formula1BD())
-                {
-                    using (var connexio = context.Database.GetDbConnection())
-                    {
-                        connexio.Open();
-
-                        using (var consulta = connexio.CreateCommand())
-                        {
-                            trans = connexio.BeginTransaction();
-                            consulta.Transaction = trans;
-                            consulta.CommandText =$@"insert into equipos
-(equip_cod,full_name,team_chief,team_name,chassis,power_unit,first_team_entry,world_championship,fastest_laps,descr,pais_equip,neumaticos,PUNTUACIO,ICONA,COTXE)
-values(@id,@fullName,@teamChief,@name,@chassis,@powerUnit,@firstTeamEntry,@worldChampionship,@fastedLaps,@desc,'ESP','P',0,@icon,@cotxe)";
-                            BDUtils.crearParametre(consulta, "id", System.Data.DbType.Int32, id);
-                            BDUtils.crearParametre(consulta, "fullName", System.Data.DbType.String, fullName);
-                            BDUtils.crearParametre(consulta, "teamChief", System.Data.DbType.String, teamChief);
-                            BDUtils.crearParametre(consulta, "name", System.Data.DbType.String, name);
-                            BDUtils.crearParametre(consulta, "chassis", System.Data.DbType.String, chassis);
-                            BDUtils.crearParametre(consulta, "powerUnit", System.Data.DbType.String, powerUnit);
-                            BDUtils.crearParametre(consulta, "firstTeamEntry", System.Data.DbType.Int32, firstTeamEntry);
-                            BDUtils.crearParametre(consulta, "worldChampionship", System.Data.DbType.Int32, worldChampionship);
-                            BDUtils.crearParametre(consulta, "fastedLaps", System.Data.DbType.Int32, fastedLaps);
-                            BDUtils.crearParametre(consulta, "desc", System.Data.DbType.String, desc);
-                            BDUtils.crearParametre(consulta, "icon", System.Data.DbType.String, icon);
-                            BDUtils.crearParametre(consulta, "cotxe", System.Data.DbType.String, cotxe);
-                            int filesAfetades = consulta.ExecuteNonQuery();
-                            if (filesAfetades != 1)
-                            {
-                                trans.Rollback();
-
-                            }
-                            else
-                            {
-                                trans.Commit();
-                                return true;
-                            }
 
 
-                        }
-                    }
-                }
 
-            }
-            catch (Exception)
-            {
-
-            }
-            return false;
-        }
-
-        public static bool DeleteEquips(int id)
-        {
-
-            try
-            {
-                DbTransaction trans = null;
-
-                using (Formula1BD context = new Formula1BD())
-                {
-                    using (var connexio = context.Database.GetDbConnection())
-                    {
-                        connexio.Open();
-
-                        using (var consulta = connexio.CreateCommand())
-                        {
-                            trans = connexio.BeginTransaction();
-                            consulta.Transaction = trans;
-                            consulta.CommandText = @"delete
-                                                    from equipos
-                                                    where equip_cod=@id";
-                            BDUtils.crearParametre(consulta, "id", System.Data.DbType.Int32, id);
-
-                            int filesAfetades = consulta.ExecuteNonQuery();
-                            if (filesAfetades != 1)
-                            {
-                                trans.Rollback();
-
-                            }
-                            else
-                            {
-                                trans.Commit();
-                                return true;
-                            }
-
-
-                        }
-                    }
-                }
-
-            }
-            catch (Exception)
-            {
-
-            }
-            return false;
-        }
         */
     }
 }

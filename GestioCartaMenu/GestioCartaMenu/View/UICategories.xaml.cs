@@ -40,7 +40,6 @@ namespace GestioCartaMenu.View
         private void ucCategoria_Loaded(object sender, RoutedEventArgs e)
         {
             string color = Catagoria.Color;
-
             stp.Background =new SolidColorBrush(ConvertColorFromHexString(color).Color);
         }
         private SolidColorBrush ConvertColorFromHexString(string colorStr)

@@ -4,6 +4,10 @@
     <RootPropertyPathName Name="Catagoria" />
     <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="Codi" />
+    <RootPropertyPathName Name="Plat" />
+    <RootPropertyPathName Name="NomCat" />
+    <RootPropertyPathName Name="Preu" />
+    <RootPropertyPathName Name="Descripcio" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -23,6 +27,8 @@
       <RootProperty Name="Background" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
@@ -56,6 +62,8 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -65,6 +73,34 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
       <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Height" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Height" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="HorizontalScrollBarVisibility" />
@@ -83,8 +119,8 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="GestioCartaMenu.View.UICategories">
-      <RootProperty Name="Catagoria" />
+    <RootType FullName="GestioCartaMenu.View.UIPlat">
+      <RootProperty Name="Plat" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="ElementName" />
@@ -97,6 +133,9 @@
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="GestioCartaMenu.View.UICategories">
+      <RootProperty Name="Catagoria" />
     </RootType>
     <RootType FullName="GestioCartaMenu.View.Carta" />
     <RootType FullName="GestioCartaMenu.View.Cuina" />

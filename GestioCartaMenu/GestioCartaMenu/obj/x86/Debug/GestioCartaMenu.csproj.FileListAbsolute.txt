@@ -118,3 +118,10 @@ D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UICa
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UICategories.g.cs
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UICategories.xaml
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UICategories.xbf
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\View\UIPlat.xbf
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\bin\x86\Debug\System.Drawing.Common.dll
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UIPlat.g.i.cs
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UIPlat.g.cs
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UIPlat.xaml
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\View\UIPlat.xbf
+D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw
