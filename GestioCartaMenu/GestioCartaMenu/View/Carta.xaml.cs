@@ -1,4 +1,5 @@
-﻿using MySQL;
+﻿using Microsoft.Toolkit.Uwp.UI.Controls;
+using MySQL;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -152,7 +153,7 @@ namespace GestioCartaMenu.View
             {
                 a = false;
             }
-            bool b=Plat.InsertPlat(codi+1, txbNom.Text, txbDescripcio.Text, preu, foto, a, c.Codi);
+            bool b=Plat.InsertPlat(codi+1, txbNom.Text, "*"+txbDescripcio.Text+"*", preu, foto, a, c.Codi);
             if (b)
             {
                 plats = Plat.GetPlat();
@@ -191,6 +192,7 @@ namespace GestioCartaMenu.View
             {
                 errDesc.Text = "";
             }
+            
             validaInsert();
         }
 
@@ -209,7 +211,7 @@ namespace GestioCartaMenu.View
                     errPreu.Text = "";
                 }
 
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 errPreu.Text = "Mal format";
                 txbPreu.Text = "0";

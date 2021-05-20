@@ -44,11 +44,12 @@ namespace GestioCartaMenu.View
         }
         private void MarcarFetCallback(DependencyPropertyChangedEventArgs e)
         {
-            estaFet();
             if (LiniaComanda != null)
             {
+                estaFet();
                 LiniaComanda.PropertyChanged += LiniaComanda_PropertyChanged;
             }
+
         }
         private void LiniaComanda_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {

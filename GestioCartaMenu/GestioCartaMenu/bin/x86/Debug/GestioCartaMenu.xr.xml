@@ -163,5 +163,9 @@
     <RootType FullName="GestioCartaMenu.View.UILiniaComanda">
       <RootProperty Name="LiniaComanda" />
     </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.MarkdownTextBlock">
+      <RootProperty Name="Text" />
+      <RootProperty Name="Margin" />
+    </RootType>
   </Roots.RootTypes>
 </Roots>

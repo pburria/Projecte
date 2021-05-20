@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MySQL;
+using System.Collections.ObjectModel;
 
 // La plantilla de elemento Control de usuario está documentada en https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -20,10 +21,13 @@ namespace GestioCartaMenu.View
 {
     public sealed partial class UIComanda : UserControl
     {
+        private ObservableCollection<LiniaComanda> liniaComandas;
         public UIComanda()
         {
             this.InitializeComponent();
         }
+
+        private List<LiniaComanda> liniesComanda = new List<LiniaComanda>();
         public Comanda Comanda
         {
             get { return (Comanda)GetValue(ComandaProperty); }
@@ -37,16 +41,17 @@ namespace GestioCartaMenu.View
         private void ucComanda_Loaded(object sender, RoutedEventArgs e)
         {
             txbData.Text = Comanda.Data.ToString("dd/MM/yyyy");
-            ordenarIMostrarLlista( LiniaComanda.getLiniaComandaPerComanda(Comanda.Codi));
-
+            liniesComanda=ordenarIMostrarLlista(LiniaComanda.getLiniaComandaPerComanda(Comanda.Codi));
+            liniaComandas = new ObservableCollection<LiniaComanda>(liniesComanda);
+            lsvLiniaComanda.ItemsSource = liniaComandas;
         }
 
-        private void ordenarIMostrarLlista(List<LiniaComanda> llista)
+        private List<LiniaComanda> ordenarIMostrarLlista(List<LiniaComanda> llista)
         {
             llista.Sort(delegate (LiniaComanda x, LiniaComanda y) {
                 return x.Acabat.CompareTo(y.Acabat);
             });
-            lsvLiniaComanda.ItemsSource = llista;
+            return llista;
         }
 
         private void lsvLiniaComanda_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,6 +72,7 @@ namespace GestioCartaMenu.View
                     LiniaComanda l = (LiniaComanda)lsvLiniaComanda.SelectedValue;
                     l.Acabat = true;
                     LiniaComanda.UpdatePlatAcabat(l.Plat,Comanda.Codi);
+
                 }
             }
 
@@ -83,14 +89,17 @@ namespace GestioCartaMenu.View
             ContentDialogResult cdr = await cd.ShowAsync();
             if (cdr.Equals(ContentDialogResult.Primary))
             {
+                l.Acabat = true;
                 LiniaComanda.UpdatePlatAcabat(l.Plat, Comanda.Codi);
+                Cuina.comandas.Remove(Comanda);
             }
         }
 
         private void lsvLiniaComanda_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            ordenarIMostrarLlista(LiniaComanda.getLiniaComandaPerComanda(Comanda.Codi));
-
+            liniesComanda = ordenarIMostrarLlista(liniesComanda);
+            liniaComandas = new ObservableCollection<LiniaComanda>(liniesComanda);
+            lsvLiniaComanda.ItemsSource = liniaComandas;
         }
     }
 }

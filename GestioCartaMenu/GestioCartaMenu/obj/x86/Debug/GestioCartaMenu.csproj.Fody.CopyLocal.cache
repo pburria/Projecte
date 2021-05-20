@@ -1,10 +1,14 @@
 C:\Users\cromp\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll
+C:\Users\cromp\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll
+C:\Users\cromp\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.pdb
+C:\Users\cromp\.nuget\packages\colorcode.uwp\2.0.6\lib\uap10.0\ColorCode.UWP.dll
+C:\Users\cromp\.nuget\packages\colorcode.uwp\2.0.6\lib\uap10.0\ColorCode.UWP.pdb
 C:\Users\cromp\.nuget\packages\google.protobuf\3.11.4\lib\netstandard2.0\Google.Protobuf.dll
 C:\Users\cromp\.nuget\packages\google.protobuf\3.11.4\lib\netstandard2.0\Google.Protobuf.pdb
 C:\Users\cromp\.nuget\packages\k4os.compression.lz4\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.dll
 C:\Users\cromp\.nuget\packages\k4os.compression.lz4.streams\1.1.11\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\cromp\.nuget\packages\k4os.hash.xxhash\1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.dll
-C:\Users\cromp\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\cromp\.nuget\packages\microsoft.bcl.asyncinterfaces\5.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\cromp\.nuget\packages\microsoft.bcl.hashcode\1.1.0\lib\netstandard2.0\Microsoft.Bcl.HashCode.dll
 C:\Users\cromp\.nuget\packages\microsoft.entityframeworkcore\3.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\cromp\.nuget\packages\microsoft.entityframeworkcore.abstractions\3.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -20,6 +24,26 @@ C:\Users\cromp\.nuget\packages\microsoft.extensions.logging\3.1.1\lib\netstandar
 C:\Users\cromp\.nuget\packages\microsoft.extensions.logging.abstractions\3.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\cromp\.nuget\packages\microsoft.extensions.options\3.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll
 C:\Users\cromp\.nuget\packages\microsoft.extensions.primitives\3.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media.pdb
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.primitives\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Primitives.dll
+C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.primitives\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Primitives.pdb
 C:\Users\cromp\.nuget\packages\mysql.data\8.0.22\lib\netstandard2.0\MySql.Data.dll
 C:\Users\cromp\.nuget\packages\mysql.data\8.0.22\lib\netstandard2.0\Ubiety.Dns.Core.dll
 C:\Users\cromp\.nuget\packages\mysql.data\8.0.22\lib\netstandard2.0\Zstandard.Net.dll
@@ -31,10 +55,14 @@ C:\Users\cromp\.nuget\packages\system.collections.immutable\1.7.0\lib\netstandar
 C:\Users\cromp\.nuget\packages\system.configuration.configurationmanager\4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll
 C:\Users\cromp\.nuget\packages\system.diagnostics.diagnosticsource\4.7.0\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll
 C:\Users\cromp\.nuget\packages\system.drawing.common\5.0.2\lib\netstandard2.0\System.Drawing.Common.dll
-C:\Users\cromp\.nuget\packages\system.runtime.compilerservices.unsafe\4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cromp\.nuget\packages\system.runtime.compilerservices.unsafe\5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\cromp\.nuget\packages\system.security.cryptography.protecteddata\4.4.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\cromp\.nuget\packages\system.security.permissions\4.7.0\lib\netstandard2.0\System.Security.Permissions.dll
+C:\Users\cromp\.nuget\packages\system.text.encodings.web\5.0.1\lib\netstandard2.0\System.Text.Encodings.Web.dll
+C:\Users\cromp\.nuget\packages\system.text.json\5.0.2\lib\netstandard2.0\System.Text.Json.dll
 C:\Users\cromp\.nuget\packages\system.xml.xpath.xmldocument\4.0.1\lib\netstandard1.3\System.Xml.XPath.XmlDocument.dll
+C:\Users\cromp\.nuget\packages\win2d.uwp\1.25.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll
+C:\Users\cromp\.nuget\packages\win2d.uwp\1.25.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd
 D:\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.dll
 D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.pdb

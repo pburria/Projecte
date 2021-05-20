@@ -31,6 +31,12 @@
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
+      <PackagePath>ColorCode.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\colorcode.uwp\2.0.6\lib\uap10.0\ColorCode.UWP.dll">
+      <PackagePath>ColorCode.UWP.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\google.protobuf\3.11.4\lib\netstandard2.0\Google.Protobuf.dll">
       <PackagePath>Google.Protobuf.dll</PackagePath>
     </AppxPackagedFile>
@@ -43,7 +49,7 @@
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\k4os.hash.xxhash\1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.dll">
       <PackagePath>K4os.Hash.xxHash.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.bcl.asyncinterfaces\5.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.bcl.hashcode\1.1.0\lib\netstandard2.0\Microsoft.Bcl.HashCode.dll">
@@ -91,6 +97,36 @@
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.extensions.primitives\3.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll">
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.dll">
+      <PackagePath>Microsoft.Toolkit.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Input.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Layout.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Markdown.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.primitives\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Primitives.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\mysql.data\8.0.22\lib\netstandard2.0\MySql.Data.dll">
       <PackagePath>MySql.Data.dll</PackagePath>
     </AppxPackagedFile>
@@ -124,7 +160,7 @@
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.drawing.common\5.0.2\lib\netstandard2.0\System.Drawing.Common.dll">
       <PackagePath>System.Drawing.Common.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.runtime.compilerservices.unsafe\4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.runtime.compilerservices.unsafe\5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.security.cryptography.protecteddata\4.4.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll">
@@ -133,14 +169,44 @@
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.security.permissions\4.7.0\lib\netstandard2.0\System.Security.Permissions.dll">
       <PackagePath>System.Security.Permissions.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.text.encodings.web\5.0.1\lib\netstandard2.0\System.Text.Encodings.Web.dll">
+      <PackagePath>System.Text.Encodings.Web.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.text.json\5.0.2\lib\netstandard2.0\System.Text.Json.dll">
+      <PackagePath>System.Text.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\system.xml.xpath.xmldocument\4.0.1\lib\netstandard1.3\System.Xml.XPath.XmlDocument.dll">
       <PackagePath>System.Xml.XPath.XmlDocument.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\win2d.uwp\1.25.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\MySQL\bin\Debug\netstandard2.0\MySQL.dll">
       <PackagePath>MySQL.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\win2d.uwp\1.25.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+      <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.core\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Core\Microsoft.Toolkit.Uwp.UI.Controls.Core.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Core\Microsoft.Toolkit.Uwp.UI.Controls.Core.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.input\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Input\Microsoft.Toolkit.Uwp.UI.Controls.Input.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Input\Microsoft.Toolkit.Uwp.UI.Controls.Input.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.layout\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Layout\Microsoft.Toolkit.Uwp.UI.Controls.Layout.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Layout\Microsoft.Toolkit.Uwp.UI.Controls.Layout.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.markdown\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Markdown\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Markdown\Microsoft.Toolkit.Uwp.UI.Controls.Markdown.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\GestioCartaMenu\GestioCartaMenu\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

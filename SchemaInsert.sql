@@ -31,23 +31,33 @@ INSERT INTO INGREDIENT VALUES(23,'RUCULA');
 INSERT INTO INGREDIENT VALUES(24,'TOMAQUET');
 INSERT INTO INGREDIENT VALUES(25,'SAITÀ');
 INSERT INTO INGREDIENT VALUES(26,'ARRÒS');
+INSERT INTO INGREDIENT VALUES(27,'MEL');
+INSERT INTO INGREDIENT VALUES(28,'MATÓ');
+INSERT INTO INGREDIENT VALUES(29,'SUCRE');
+INSERT INTO INGREDIENT VALUES(30,'NOUS');
+INSERT INTO INGREDIENT VALUES(31,'GELAT DE MADUIXA');
+INSERT INTO INGREDIENT VALUES(32,'GELAT DE VAINILLA');
 
 INSERT INTO CATEGORIA VALUES (1,'CARN','#FF3333');
 INSERT INTO CATEGORIA VALUES (2,'PEIX','#33FFFC');
 INSERT INTO CATEGORIA VALUES (3,'JAPONES','#FCFF33');
 INSERT INTO CATEGORIA VALUES (4,'VEGÀ','#68FF33');
+INSERT INTO CATEGORIA VALUES (5,'POSTRES','#FB00FF');
 
-INSERT INTO PLAT VALUES (1,'Entrecot a la Brasa','Entrecot fet a la brasa amb guarnicio de patates amb all i oli',20.99,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/entrecot.jpg'),true,1);
-INSERT INTO PLAT VALUES (2,'Llagostins a la Brasa','Llagostins de palamòs a la brasa amb all i julibert',10.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/llagostins.jpg'),true,2);
-INSERT INTO PLAT VALUES (3,'Sashami de tonyina','10 unitats de Sashami de tonyina',16.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/sashimi.jpg'),true,3);
-INSERT INTO PLAT VALUES (4,'Mongetes amb butifarra','Butifara del país feta a la brasa amb guarnició de mongetes i all i oli',10.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/buti.jpg'),true,1);
-INSERT INTO PLAT VALUES (5,'Llom arrebosat amb cigrons','Llom arrebosat amb formatge amb guarnició de cigrons',12.45,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/llom.jpg'),true,1);
-INSERT INTO PLAT VALUES (6,'Pit de pollastre amb llenties','Pit de pollastre fet a la brasa amb guarnició de llenties',10.15,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/pollo.jpg'),true,1);
-INSERT INTO PLAT VALUES (7,'Salmó a la planxa','Salmó fresc a la planxa amb guarnició de rucula i tomàquet',10.15,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/salmo.jpg'),true,2);
-INSERT INTO PLAT VALUES (8,'Nigiri de tonyina','2 unitats de Nigiri de tonyina',3.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/nigiriTun.jpg'),true,3);
-INSERT INTO PLAT VALUES (9,'Nigiri de salmó','2 unitats de Nigiri de salmó',3.30,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/nigiriSalmo.jpg'),true,3);
-INSERT INTO PLAT VALUES (10,'Ensortit formatge i pernil','Pa torrat amb tomàquet i ensortit de pernil formatge',9.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/paPernil.jpg'),true,1);
-INSERT INTO PLAT VALUES (11,'Saità a la planxa','Saità a la planxa amb guarnició de patates i rucula',13.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/saita.jpg'),true,4);
+INSERT INTO PLAT VALUES (1,'Entrecot a la Brasa','*Entrecot fet a la brasa amb guarnicio de patates amb all i oli*',20.99,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/entrecot.jpg'),true,1);
+INSERT INTO PLAT VALUES (2,'Llagostins a la Brasa','*Llagostins de palamòs a la brasa amb all i julibert*',10.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/llagostins.jpg'),true,2);
+INSERT INTO PLAT VALUES (3,'Sashami de tonyina','*10 unitats de Sashami de tonyina*',16.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/sashimi.jpg'),true,3);
+INSERT INTO PLAT VALUES (4,'Mongetes amb butifarra','*Butifara del país feta a la brasa amb guarnició de mongetes i all i oli*',10.20,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/buti.jpg'),true,1);
+INSERT INTO PLAT VALUES (5,'Llom arrebosat amb cigrons','*Llom arrebosat amb formatge amb guarnició de cigrons*',12.45,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/llom.jpg'),true,1);
+INSERT INTO PLAT VALUES (6,'Pit de pollastre amb llenties','*Pit de pollastre fet a la brasa amb guarnició de llenties*',10.15,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/pollo.jpg'),true,1);
+INSERT INTO PLAT VALUES (7,'Salmó a la planxa','*Salmó fresc a la planxa amb guarnició de rucula i tomàquet*',10.15,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/salmo.jpg'),true,2);
+INSERT INTO PLAT VALUES (8,'Nigiri de tonyina','*2 unitats de Nigiri de tonyina*',3.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/nigiriTun.jpg'),true,3);
+INSERT INTO PLAT VALUES (9,'Nigiri de salmó','*2 unitats de Nigiri de salmó*',3.30,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/nigiriSalmo.jpg'),true,3);
+INSERT INTO PLAT VALUES (10,'Ensortit formatge i pernil','*Pa torrat amb tomàquet i ensortit de pernil formatge*',9.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/paPernil.jpg'),true,1);
+INSERT INTO PLAT VALUES (11,'Saità a la planxa','*Saità a la planxa amb guarnició de patates i rucula*',13.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/saita.jpg'),true,4);
+INSERT INTO PLAT VALUES (12,'Mel i Mató','*Mató del cadi amb mel, sucre i nous*',5.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/mato.jpg'),true,5);
+INSERT INTO PLAT VALUES (13,'Gelat de Maduixa','*Gelat de maduixa ideal pel estiu*',3.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/gelatM.jpg'),true,5);
+INSERT INTO PLAT VALUES (14,'Gelat de Vainilla','*Gelat de vainilla ideal pel estiu*',3.50,LOAD_FILE('D:/cromp/2n DAM/Projecte/Imatges/gelatV.jpg'),true,5);
 
 INSERT INTO LINIA_ESCANDALL VALUES(1,1,350,1,3);
 INSERT INTO LINIA_ESCANDALL VALUES(1,2,1,5,4);
@@ -95,6 +105,16 @@ INSERT INTO LINIA_ESCANDALL VALUES(10,4,50,1,18);
 INSERT INTO LINIA_ESCANDALL VALUES(11,1,250,1,25);
 INSERT INTO LINIA_ESCANDALL VALUES(11,2,3,4,6);
 INSERT INTO LINIA_ESCANDALL VALUES(11,3,50,1,23);
+
+INSERT INTO LINIA_ESCANDALL VALUES(12,1,50,1,28);
+INSERT INTO LINIA_ESCANDALL VALUES(12,2,1,5,27);
+INSERT INTO LINIA_ESCANDALL VALUES(12,3,2,4,30);
+INSERT INTO LINIA_ESCANDALL VALUES(12,4,1,5,29);
+
+INSERT INTO LINIA_ESCANDALL VALUES(13,1,1,4,31);
+
+INSERT INTO LINIA_ESCANDALL VALUES(14,1,1,4,32);
+
 
 INSERT INTO TAULA VALUES(1);
 INSERT INTO TAULA VALUES(2);

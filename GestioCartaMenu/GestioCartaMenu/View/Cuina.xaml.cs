@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MySQL;
+using System.Collections.ObjectModel;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,21 +30,28 @@ namespace GestioCartaMenu.View
         {
             this.InitializeComponent();
         }
+        public static ObservableCollection<Comanda> comandas;
+        private List<Comanda> lComanas=new List<Comanda>();
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            ordenarIMostrarLlista(Comanda.getComandesNoFinalitzades());
-
-            
+            mostrarLlista();
             Timer t = new Timer(2000);
             t.Elapsed += T_Elapsed;
             t.Start();
         }
-        private void ordenarIMostrarLlista(List<Comanda> llista)
+
+        private void mostrarLlista()
+        {
+            lComanas = ordenarIMostrarLlista(Comanda.getComandesNoFinalitzades());
+            comandas = new ObservableCollection<Comanda>(lComanas);
+            lsvComandes.ItemsSource = comandas;
+        }
+        private List<Comanda> ordenarIMostrarLlista(List<Comanda> llista)
         {
             llista.Sort(delegate (Comanda x, Comanda y) {
                 return x.Data.CompareTo(y.Data);
             });
-            lsvComandes.ItemsSource = llista;
+            return llista;
         }
         private void T_Elapsed(object sender, ElapsedEventArgs e)
         {
@@ -53,11 +61,7 @@ namespace GestioCartaMenu.View
                     CoreDispatcherPriority.High,
                     () =>
                     {
-                        //int numComandes = lsvComandes.Items.Count;
-                        //if(numComandes!= Comanda.getComandesNoFinalitzades().Count)
-                        //{
-                            ordenarIMostrarLlista(Comanda.getComandesNoFinalitzades());
-                        //}
+                        mostrarLlista();
                     });
             }
             catch (Exception)
