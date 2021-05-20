@@ -132,6 +132,12 @@
     <Compile Include="View\UICategories.xaml.cs">
       <DependentUpon>UICategories.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UIComanda.xaml.cs">
+      <DependentUpon>UIComanda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UILiniaComanda.xaml.cs">
+      <DependentUpon>UILiniaComanda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UIPlat.xaml.cs">
       <DependentUpon>UIPlat.xaml</DependentUpon>
     </Compile>
@@ -172,6 +178,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UIComanda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UILiniaComanda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UIPlat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,8 +195,14 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>7.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody">
+      <Version>3.3.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

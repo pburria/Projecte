@@ -45,9 +45,17 @@
               "target": "Package",
               "version": "[6.2.10, )"
             },
+            "Microsoft.Toolkit.Uwp.UI.Controls": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.UI.Xaml": {
               "target": "Package",
               "version": "[2.5.0, )"
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[3.3.3, )"
             }
           },
           "imports": [

@@ -51,7 +51,6 @@ namespace GestioCartaMenu.View
             lsvPlats.ItemsSource = plats;
             cmbDisponible.ItemsSource = comboDisponible;
             cmbCategories.ItemsSource = Catagoria.GetCatagorias();
-            
         }
         private void btnTotsPlats_Click(object sender, RoutedEventArgs e)
         {

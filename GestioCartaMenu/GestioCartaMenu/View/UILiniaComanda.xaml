@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="GestioCartaMenu.View.UILiniaComanda"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioCartaMenu.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="50"
+    d:DesignWidth="200" x:Name="ucLiniaComanda" Loaded="ucLiniaComanda_Loaded">
+
+    <Grid Background="White">
+        <StackPanel Orientation="Horizontal" x:Name="stp" >
+            <TextBlock FontWeight="Bold" FontSize="20" Text="{Binding ElementName=ucLiniaComanda,Path=LiniaComanda.Qtat}"></TextBlock>
+            <TextBlock Text="x" FontWeight="Bold" FontSize="20"></TextBlock>
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="txbNom"  Margin="5 0 0 0"></TextBlock>
+                <TextBlock x:Name="txbNom1" Margin="5 0 0 0"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

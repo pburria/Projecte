@@ -4,6 +4,12 @@
     <RootPropertyPathName Name="Catagoria" />
     <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="Codi" />
+    <RootPropertyPathName Name="Comanda" />
+    <RootPropertyPathName Name="CognomCambrer" />
+    <RootPropertyPathName Name="NomCambrer" />
+    <RootPropertyPathName Name="Taula" />
+    <RootPropertyPathName Name="LiniaComanda" />
+    <RootPropertyPathName Name="Qtat" />
     <RootPropertyPathName Name="Plat" />
     <RootPropertyPathName Name="NomCat" />
     <RootPropertyPathName Name="Preu" />
@@ -25,6 +31,7 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Height" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumnSpan" />
@@ -72,6 +79,7 @@
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
@@ -109,12 +117,15 @@
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="Margin" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="ItemContainerStyle" />
+      <RootProperty Name="ItemsPanel" />
       <RootEvent Name="SelectionChanged" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -138,10 +149,19 @@
       <RootProperty Name="Catagoria" />
     </RootType>
     <RootType FullName="GestioCartaMenu.View.Carta" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="GestioCartaMenu.View.UIComanda">
+      <RootProperty Name="Comanda" />
+    </RootType>
     <RootType FullName="GestioCartaMenu.View.Cuina" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />
+    </RootType>
+    <RootType FullName="GestioCartaMenu.View.UILiniaComanda">
+      <RootProperty Name="LiniaComanda" />
     </RootType>
   </Roots.RootTypes>
 </Roots>
