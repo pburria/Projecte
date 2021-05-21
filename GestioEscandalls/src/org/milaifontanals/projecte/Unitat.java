@@ -1,7 +1,13 @@
 
 package org.milaifontanals.projecte;
 
-public class Unitat {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Unitat implements Serializable {
+    @Id
     private int codi;
     private String nom;
     
@@ -28,6 +34,36 @@ public class Unitat {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.codi;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Unitat other = (Unitat) obj;
+        if (this.codi != other.codi) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Unitat{" + "codi=" + codi + ", nom=" + nom + '}';
     }
     
     

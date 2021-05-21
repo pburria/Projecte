@@ -14,4 +14,18 @@
         <properties>
         </properties>
     </persistence-unit>
+    <persistence-unit name="UP-EclipseLink" transaction-type="RESOURCE_LOCAL">
+            <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+            <class>org.milaifontanals.projecte.Cambrer</class>
+            <class>org.milaifontanals.projecte.Categoria</class>
+            <class>org.milaifontanals.projecte.Comanda</class>
+            <class>org.milaifontanals.projecte.Ingredient</class>
+            <class>org.milaifontanals.projecte.LiniaComanda</class>
+            <class>org.milaifontanals.projecte.LiniaEscandall</class>
+            <class>org.milaifontanals.projecte.Plat</class>
+            <class>org.milaifontanals.projecte.Taula</class>
+            <class>org.milaifontanals.projecte.Unitat</class>
+        <properties>
+        </properties>
+    </persistence-unit>
 </persistence>

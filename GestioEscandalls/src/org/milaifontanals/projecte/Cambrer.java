@@ -1,6 +1,12 @@
 package org.milaifontanals.projecte;
 
-public class Cambrer {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Cambrer implements Serializable {
+    @Id
     private int codi;
     private String nom;
     private String cognom1;
@@ -68,6 +74,40 @@ public class Cambrer {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + this.codi;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cambrer other = (Cambrer) obj;
+        if (this.codi != other.codi) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Cambrer{" + "codi=" + codi + ", nom=" + nom + ", cognom1=" + cognom1 + ", cognom2=" + cognom2 + ", user=" + user + ", password=" + password + '}';
+    }
+    
+    
+    
+    
     
     
 }

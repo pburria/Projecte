@@ -1,9 +1,18 @@
 package org.milaifontanals.projecte;
 
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 
-public class LiniaComanda {
-    private int comanda;
+@Entity
+@IdClass(LiniaComandaId.class)
+public class LiniaComanda implements Serializable {
+    @Id
+    private int comanda; 
     private int plat;
+    @Id
     private int num;
     private int qtat;
     private Boolean acabat;
@@ -59,4 +68,45 @@ public class LiniaComanda {
     public void setAcabat(Boolean acabat) {
         this.acabat = acabat;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + this.comanda;
+        hash = 17 * hash + this.num;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final LiniaComanda other = (LiniaComanda) obj;
+        if (this.comanda != other.comanda) {
+            return false;
+        }
+        if (this.num != other.num) {
+            return false;
+        }
+        return true;
+    }
+
+    
+
+    @Override
+    public String toString() {
+        return "LiniaComanda{" + "Codi comanda=" + comanda + ", Codi plat=" + plat + ", num=" + num + ", qtat=" + qtat + ", acabat=" + acabat + '}';
+    }
+
+
+    
+    
+    
 }
