@@ -1,29 +1,15 @@
 package org.milaifontanals.projecte;
 
-import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
 
-@Entity
-@IdClass(LiniaEscandallId.class)
-@Table(name="linia_escandall")
-public class LiniaEscandall implements Serializable {
-    @Id
+public class LiniaEscandall {
     private int plat;
-    @Id
     private int num;
     private int qtat;
     private int unitat;
     private int ingredient;
     private String nomUnitat;
     private String nomIngredient;
-
-    protected LiniaEscandall() {
-
-    }
         
     public LiniaEscandall(int plat, int num, int qtat, int unitat, int ingredient, String nomUnitat, String nomIngredient) {
         this.plat = plat;

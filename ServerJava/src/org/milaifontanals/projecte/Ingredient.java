@@ -1,20 +1,10 @@
-
 package org.milaifontanals.projecte;
-
-import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
-@Entity
-public class Ingredient implements Serializable {
-    @Id
+public class Ingredient {
+
     private int codi;
     private String nom;
-    
-    protected Ingredient(){
-        
-    }
     
     public Ingredient(int codi, String nom) {
         this.codi = codi;

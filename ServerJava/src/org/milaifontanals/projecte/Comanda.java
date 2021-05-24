@@ -1,21 +1,13 @@
 package org.milaifontanals.projecte;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-@Entity
-public class Comanda implements Serializable {
-    @Id
+
+public class Comanda {
     private int codi;
     private Date data;
     private int taula;
     private int cambrer;
     
-    protected Comanda(){
-        
-    }
-
     public Comanda(int codi, Date data, int taula, int cambrer) {
         this.codi = codi;
         this.data = data;

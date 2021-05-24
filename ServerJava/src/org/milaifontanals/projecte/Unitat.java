@@ -1,22 +1,14 @@
-
 package org.milaifontanals.projecte;
 
-import java.io.Serializable;
-import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-public class Ingredient implements Serializable {
-    @Id
+public class Unitat{
     private int codi;
     private String nom;
     
-    protected Ingredient(){
+    protected Unitat(){
         
     }
     
-    public Ingredient(int codi, String nom) {
+    public Unitat(int codi, String nom) {
         this.codi = codi;
         this.nom = nom;
     }
@@ -40,8 +32,7 @@ public class Ingredient implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + this.codi;
-        hash = 23 * hash + Objects.hashCode(this.nom);
+        hash = 97 * hash + this.codi;
         return hash;
     }
 
@@ -56,11 +47,8 @@ public class Ingredient implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Ingredient other = (Ingredient) obj;
+        final Unitat other = (Unitat) obj;
         if (this.codi != other.codi) {
-            return false;
-        }
-        if (!Objects.equals(this.nom, other.nom)) {
             return false;
         }
         return true;
@@ -70,11 +58,6 @@ public class Ingredient implements Serializable {
     public String toString() {
         return nom;
     }
-    
-    
-    
-    
-    
     
     
 }
