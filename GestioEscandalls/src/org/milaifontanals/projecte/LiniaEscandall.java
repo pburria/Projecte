@@ -4,20 +4,33 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Table;
 
 @Entity
 @IdClass(LiniaEscandallId.class)
 public class LiniaEscandall {
-    @Id 
+    @Id
     private int plat;
     @Id
     private int num;
     private int qtat;
     private int unitat;
     private int ingredient;
-    
-    protected LiniaEscandall(){
+    private String nomUnitat;
+    private String nomIngredient;
+
+    protected LiniaEscandall() {
+
+    }
         
+    public LiniaEscandall(int plat, int num, int qtat, int unitat, int ingredient, String nomUnitat, String nomIngredient) {
+        this.plat = plat;
+        this.num = num;
+        this.qtat = qtat;
+        this.unitat = unitat;
+        this.ingredient = ingredient;
+        this.nomUnitat = nomUnitat;
+        this.nomIngredient = nomIngredient;
     }
 
     public LiniaEscandall(int plat, int num, int qtat, int unitat, int ingredient) {
@@ -26,6 +39,15 @@ public class LiniaEscandall {
         this.qtat = qtat;
         this.unitat = unitat;
         this.ingredient = ingredient;
+    }
+
+    public LiniaEscandall(int qtat, String nomUnitat, String nomIngredient, int unitat, int ingredient) {
+        this.qtat = qtat;
+        this.nomUnitat = nomUnitat;
+        this.nomIngredient = nomIngredient;
+        this.unitat = unitat;
+        this.ingredient = ingredient;
+
     }
 
     public int getPlat() {
@@ -68,6 +90,22 @@ public class LiniaEscandall {
         this.ingredient = ingredient;
     }
 
+    public String getNomUnitat() {
+        return nomUnitat;
+    }
+
+    public void setNomUnitat(String nomUnitat) {
+        this.nomUnitat = nomUnitat;
+    }
+
+    public String getNomIngredient() {
+        return nomIngredient;
+    }
+
+    public void setNomIngredient(String nomIngredient) {
+        this.nomIngredient = nomIngredient;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
@@ -99,16 +137,6 @@ public class LiniaEscandall {
 
     @Override
     public String toString() {
-        return "LiniaEscandall{" + "Codi plat=" + plat + ", num=" + num + ", qtat=" + qtat + ", Codi unitat=" + unitat + ", Codi ingredient=" + ingredient + '}';
+        return "X" + qtat + " " + nomUnitat + " " + nomIngredient;
     }
-
-    
-
-    
-    
-    
-
-    
-    
-    
 }

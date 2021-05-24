@@ -24,6 +24,7 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />
+      <RootEvent Name="Unloaded" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">

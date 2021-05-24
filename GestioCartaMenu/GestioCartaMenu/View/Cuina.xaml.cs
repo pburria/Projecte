@@ -32,10 +32,11 @@ namespace GestioCartaMenu.View
         }
         public static ObservableCollection<Comanda> comandas;
         private List<Comanda> lComanas=new List<Comanda>();
+        private Timer t;
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             mostrarLlista();
-            Timer t = new Timer(2000);
+            t = new Timer(2000);
             t.Elapsed += T_Elapsed;
             t.Start();
         }
@@ -70,5 +71,9 @@ namespace GestioCartaMenu.View
 
         }
 
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            t.Stop();
+        }
     }
 }

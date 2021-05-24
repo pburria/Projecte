@@ -63,7 +63,7 @@ public class Unitat implements Serializable {
 
     @Override
     public String toString() {
-        return "Unitat{" + "codi=" + codi + ", nom=" + nom + '}';
+        return nom;
     }
     
     
