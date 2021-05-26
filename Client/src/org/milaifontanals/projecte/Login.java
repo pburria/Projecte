@@ -1,8 +1,7 @@
 
+package org.milaifontanals.projecte;
+
 import java.io.Serializable;
-
-
-
 
 public class Login implements Serializable {
     private int sessionId;

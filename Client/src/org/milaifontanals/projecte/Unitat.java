@@ -1,24 +1,14 @@
 package org.milaifontanals.projecte;
 
-import java.io.Serializable;
-
-public class Categoria implements Serializable {
-
+public class Unitat{
     private int codi;
     private String nom;
-    private String color;
-
-    protected Categoria() {
-
+    
+    protected Unitat(){
+        
     }
-
-    public Categoria(int codi, String nom, String color) {
-        this.codi = codi;
-        this.nom = nom;
-        this.color = color;
-    }
-
-    public Categoria(int codi, String nom) {
+    
+    public Unitat(int codi, String nom) {
         this.codi = codi;
         this.nom = nom;
     }
@@ -39,18 +29,10 @@ public class Categoria implements Serializable {
         this.nom = nom;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + this.codi;
+        hash = 97 * hash + this.codi;
         return hash;
     }
 
@@ -65,7 +47,7 @@ public class Categoria implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Categoria other = (Categoria) obj;
+        final Unitat other = (Unitat) obj;
         if (this.codi != other.codi) {
             return false;
         }
@@ -76,5 +58,6 @@ public class Categoria implements Serializable {
     public String toString() {
         return nom;
     }
-
+    
+    
 }

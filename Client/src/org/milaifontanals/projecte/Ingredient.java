@@ -1,24 +1,12 @@
 package org.milaifontanals.projecte;
+import java.util.Objects;
 
-import java.io.Serializable;
-
-public class Categoria implements Serializable {
+public class Ingredient {
 
     private int codi;
     private String nom;
-    private String color;
-
-    protected Categoria() {
-
-    }
-
-    public Categoria(int codi, String nom, String color) {
-        this.codi = codi;
-        this.nom = nom;
-        this.color = color;
-    }
-
-    public Categoria(int codi, String nom) {
+    
+    public Ingredient(int codi, String nom) {
         this.codi = codi;
         this.nom = nom;
     }
@@ -39,18 +27,11 @@ public class Categoria implements Serializable {
         this.nom = nom;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + this.codi;
+        hash = 23 * hash + this.codi;
+        hash = 23 * hash + Objects.hashCode(this.nom);
         return hash;
     }
 
@@ -65,8 +46,11 @@ public class Categoria implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Categoria other = (Categoria) obj;
+        final Ingredient other = (Ingredient) obj;
         if (this.codi != other.codi) {
+            return false;
+        }
+        if (!Objects.equals(this.nom, other.nom)) {
             return false;
         }
         return true;
@@ -76,5 +60,11 @@ public class Categoria implements Serializable {
     public String toString() {
         return nom;
     }
-
+    
+    
+    
+    
+    
+    
+    
 }

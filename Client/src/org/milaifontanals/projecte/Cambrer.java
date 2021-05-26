@@ -1,7 +1,6 @@
+package org.milaifontanals.projecte;
 
 import java.io.Serializable;
-
-
 
 public class Cambrer implements Serializable {
     private int codi;
