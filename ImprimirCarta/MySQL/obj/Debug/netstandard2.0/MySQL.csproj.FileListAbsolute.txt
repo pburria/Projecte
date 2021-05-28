@@ -1,0 +1,9 @@
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\bin\Debug\netstandard2.0\MySQL.deps.json
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\bin\Debug\netstandard2.0\MySQL.dll
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.csprojAssemblyReference.cache
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.AssemblyInfoInputs.cache
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.AssemblyInfo.cs
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\bin\Debug\netstandard2.0\MySQL.pdb
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.csproj.CoreCompileInputs.cache
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.dll
+D:\cromp\2n DAM\Projecte\ImprimirCarta\MySQL\obj\Debug\netstandard2.0\MySQL.pdb

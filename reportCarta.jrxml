@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportCarta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8eb25bfc-4de6-457f-babc-1fa2497fc5d8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="18"/>
+	<property name="ireport.jasperserver.reportUnit" value="/dam2-pburria/PROVES/Restaurant/Carta"/>
+	<property name="ireport.jasperserver.url" value="http://51.68.224.27:8080/jasperserver/services/repository"/>
+	<parameter name="catagoria" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.NOM as nomPlat,p.DESCRIPCIO_MD,p.PREU,c.nom as nomCat,p.DISPONIBLE,li.QUANTITAT,u.nom as nomUnitat,i.nom as nomIngredient
+from plat p left join linia_escandall li on p.codi=li.plat join categoria c on p.categoria=c.codi left join ingredient i
+	on li.INGREDIENT=i.codi left join unitat u on li.unitat=u.codi
+where $P{catagoria} is null or $P{catagoria}=p.categoria
+order by nomPlat]]>
+	</queryString>
+	<field name="nomPlat" class="java.lang.String"/>
+	<field name="DESCRIPCIO_MD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PREU" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomCat" class="java.lang.String"/>
+	<field name="DISPONIBLE" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUANTITAT" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomUnitat" class="java.lang.String"/>
+	<field name="nomIngredient" class="java.lang.String"/>
+	<group name="nomPlat" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{nomPlat}]]></groupExpression>
+		<groupHeader>
+			<band height="233">
+				<textField>
+					<reportElement uuid="4b8864cc-e189-4111-bc87-cee521466614" x="127" y="44" width="204" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{nomPlat}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ea54dd0b-1d5a-49be-9d78-d4b62d9a39ba" x="127" y="76" width="423" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{DESCRIPCIO_MD}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="80c142fa-e210-4b24-b5d1-874d8a3ca2de" x="127" y="144" width="94" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{DISPONIBLE}==true?"Disponible":"No Disponible"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1e36513d-a7d7-42b6-8c97-7d273a5825e8" x="127" y="107" width="50" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{PREU}+"€"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e5cb417e-979c-4c1c-852a-89af12bf197c" x="10" y="44" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nom]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f44e21db-ec11-46ec-bd07-1f02a284031b" x="12" y="107" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Preu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5105f867-32f7-49af-b232-ecd740718803" x="10" y="76" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Descripcio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4a7ba36d-0778-4d01-aa15-2ea1b878e227" x="12" y="144" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Disponible]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="113034ae-c643-4367-a45d-60c3383968f1" x="10" y="10" width="145" height="24"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dades Plat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b0e805c2-2677-41d0-8e6b-000a287958c0" x="10" y="174" width="192" height="28"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dades Linia Escandall]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="e7b6238b-6aa9-466d-911a-7fe294362e6c" x="10" y="212" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Quantitat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ccd328df-32f3-45dc-be50-275de4b69d5a" x="155" y="212" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unitat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cd3bb0f5-cc4c-47e0-ac26-5815113e66b9" x="331" y="212" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ingredient]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="7b277708-88ad-4285-b293-f7042647896b" x="0" y="232" width="555" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="184" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c25e5544-45ab-49a6-bb06-1a7894d72ed4" x="204" y="50" width="346" height="38"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARTA DEL RESTAURANT]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="554ffa4f-a97e-4343-837d-7ce8356c3c34" x="10" y="15" width="192" height="127"/>
+				<imageExpression><![CDATA["repo:restaurant.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="4abfa22d-1091-4edb-86dc-ba7a602d6138" x="10" y="160" width="85" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria Escollida]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="91c3df46-9873-4e89-acb6-9087ac90c548" x="107" y="160" width="95" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomCat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="1de5dc3e-3cf9-4654-b5b3-afec89f4ac9b" x="12" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{QUANTITAT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ef3542eb-51f2-41b8-840d-8beb6da2dce9" x="155" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomUnitat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9e14618-dd1e-481c-bedb-9588838b81a0" x="331" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomIngredient}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b2d99a02-0c71-400a-97bf-dea383bf16e1" x="425" y="29" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="fd7d1a4b-4bb8-457a-bbbc-6245c98cf09c" x="505" y="29" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="73fba0bb-5ca6-4b44-9e98-82bc9e29df6a" x="10" y="29" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

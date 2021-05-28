@@ -65,9 +65,9 @@ namespace MySQL
                                 string nom = reader.GetString(reader.GetOrdinal("nom"));
                                 string desc = reader.GetString(reader.GetOrdinal("DESCRIPCIO_MD"));
                                 decimal preu = reader.GetDecimal(reader.GetOrdinal("preu"));
-                                int tamany = GetTamanyFoto(codi);
+                                long tamany = GetTamanyFoto(codi);
                                 byte[] byteArray = new byte[tamany];
-                                reader.GetBytes(reader.GetOrdinal("FOTO"),0, byteArray,0,tamany);
+                                reader.GetBytes(reader.GetOrdinal("FOTO"),0, byteArray,0,(int)tamany);
                                 bool disponible = reader.GetBoolean(reader.GetOrdinal("DISPONIBLE"));
                                 int cat = reader.GetInt32(reader.GetOrdinal("CATEGORIA"));
                                 string nomCat = reader.GetString(reader.GetOrdinal("nomCat"));
@@ -112,9 +112,9 @@ namespace MySQL
                                 string nom = reader.GetString(reader.GetOrdinal("nom"));
                                 string desc = reader.GetString(reader.GetOrdinal("DESCRIPCIO_MD"));
                                 decimal preu = reader.GetDecimal(reader.GetOrdinal("preu"));
-                                int tamany = GetTamanyFoto(codi);
+                                long tamany = GetTamanyFoto(codi);
                                 byte[] byteArray = new byte[tamany];
-                                reader.GetBytes(reader.GetOrdinal("FOTO"), 0, byteArray, 0, tamany);
+                                reader.GetBytes(reader.GetOrdinal("FOTO"), 0, byteArray, 0, (int)tamany);
                                 bool disponible = reader.GetBoolean(reader.GetOrdinal("DISPONIBLE"));
                                 int cat = reader.GetInt32(reader.GetOrdinal("CATEGORIA"));
                                 string nomCat = reader.GetString(reader.GetOrdinal("nomCat"));
@@ -159,9 +159,9 @@ namespace MySQL
                                 string nom = reader.GetString(reader.GetOrdinal("nom"));
                                 string desc = reader.GetString(reader.GetOrdinal("DESCRIPCIO_MD"));
                                 decimal preu = reader.GetDecimal(reader.GetOrdinal("preu"));
-                                int tamany = GetTamanyFoto(codi);
+                                long tamany = GetTamanyFoto(codi);
                                 byte[] byteArray = new byte[tamany];
-                                reader.GetBytes(reader.GetOrdinal("FOTO"), 0, byteArray, 0, tamany);
+                                reader.GetBytes(reader.GetOrdinal("FOTO"), 0, byteArray, 0,(int) tamany);
                                 bool disponible = reader.GetBoolean(reader.GetOrdinal("DISPONIBLE"));
                                 int cat = reader.GetInt32(reader.GetOrdinal("CATEGORIA"));
                                 string nomCat = reader.GetString(reader.GetOrdinal("nomCat"));
@@ -180,7 +180,7 @@ namespace MySQL
             return null;
         }
 
-        public static int GetTamanyFoto(int codi)
+        public static long GetTamanyFoto(int codi)
         {
 
             try
@@ -190,7 +190,7 @@ namespace MySQL
                 using (var connexio = context.Database.GetDbConnection())
                 {
                     connexio.Open();
-                    int tamany = -1;
+                    long tamany = -1;
                     using (var consulta = connexio.CreateCommand())
                     {
                         consulta.CommandText = @"SELECT OCTET_LENGTH(foto) FROM plat
@@ -198,7 +198,7 @@ namespace MySQL
                         BDUtils.crearParametre(consulta, "codi", System.Data.DbType.Int32, codi);
 
                         var r = consulta.ExecuteScalar();
-                        tamany = (Int32)r;
+                        tamany = (long)r;
                         return tamany;
                     }
                 }
@@ -368,7 +368,7 @@ namespace MySQL
                             trans = connexio.BeginTransaction();
                             consulta.Transaction = trans;
                             consulta.CommandText = $@"INSERT INTO PLAT VALUES
-                                                     (@codi,@nom,@desc,@preu,LOAD_FILE(@foto),@disponible,@cat)";
+                                                     (@codi,@nom,@desc,@preu,FROM_BASE64(@foto),@disponible,@cat)";
                             BDUtils.crearParametre(consulta, "codi", System.Data.DbType.Int32, codi);
                             BDUtils.crearParametre(consulta, "nom", System.Data.DbType.String, nom);
                             BDUtils.crearParametre(consulta, "desc", System.Data.DbType.String, desc);

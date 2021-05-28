@@ -18,15 +18,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Properties;
-import java.util.TimeZone;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -293,7 +288,7 @@ public class Server {
 
         private void buidarTaula() throws IOException, SQLException {
             int sessio = ois.readInt();
-            //if (sessions.containsKey(sessio)) {
+            if (sessions.containsKey(sessio)) {
             int taula = ois.readInt();
             int comanda = getComandaDeLaTula(taula);
             int plats = posarTotsElsPlatsAcabat(comanda);
@@ -305,7 +300,7 @@ public class Server {
             } else {
                 oos.writeInt(-1);
             }
-            //}
+            }
         }
 
         private int numeroAleatoriPerSesio(Cambrer c) {
@@ -488,7 +483,6 @@ public class Server {
         }
 
         private int posarTotsElsPlatsAcabat(int comanda) throws SQLException {
-            ResultSet set;
             String consulta = "update linia_comanda set acabat=true\n"
                     + "where comanda=" + comanda;
 

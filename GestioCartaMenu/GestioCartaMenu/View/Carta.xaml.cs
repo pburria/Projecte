@@ -139,9 +139,19 @@ namespace GestioCartaMenu.View
         {
             int codi = Plat.GetUltimCodi();
             decimal preu = Decimal.Parse(txbPreu.Text);
-            string ruta = image.UriSource.AbsolutePath;
 
-            string foto = ruta;
+            string ruta = image.UriSource.AbsolutePath;
+            UInt32 FileSize;
+            byte[] rawData;
+            FileStream fs;
+            fs = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+            FileSize = (uint)fs.Length;
+            rawData = new byte[FileSize];
+            fs.Read(rawData, 0, (int)FileSize);
+            fs.Close();
+
+            string imatgeBase64 = Convert.ToBase64String(rawData);
+
             bool a=false;
             Catagoria c = (Catagoria)cmbCategories.SelectedValue;
             string dis = (string)cmbDisponible.SelectedValue;
@@ -153,7 +163,7 @@ namespace GestioCartaMenu.View
             {
                 a = false;
             }
-            bool b=Plat.InsertPlat(codi+1, txbNom.Text, "*"+txbDescripcio.Text+"*", preu, foto, a, c.Codi);
+            bool b=Plat.InsertPlat(codi+1, txbNom.Text, "*"+txbDescripcio.Text+"*", preu, imatgeBase64, a, c.Codi);
             if (b)
             {
                 plats = Plat.GetPlat();
