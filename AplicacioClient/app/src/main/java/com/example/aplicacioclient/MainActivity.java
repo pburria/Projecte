@@ -34,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean correcte=existeixUsuari(""+edtUsuari.getText(),""+edtContrasenya.getText());
+                if(correcte){
+                    Intent i=new Intent(MainActivity.this,Taules.class);
+                    i.putExtra("session_id",12345);
+                    startActivity(i);
+                }
                 edtUsuari.setText("");
                 edtContrasenya.setText("");
-                Intent i=new Intent(MainActivity.this,Taules.class);
-                i.putExtra("session_id",12345);
-                 startActivity(i);
+
             }
         });
     }

@@ -13,7 +13,7 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <WebView x:ConnectionId='2' x:Name="webView" Grid.Column="0" Source="https://www.hltv.org/team/6667/faze#tab-matchesBox"></WebView>
+        <WebView x:ConnectionId='2' x:Name="webView" Grid.Column="0"></WebView>
         <StackPanel Orientation="Vertical" Grid.Column="1">
             <ComboBox x:ConnectionId='3' x:Name="cmbCategories" Width="100"></ComboBox>
             <Button x:ConnectionId='4' x:Name="btnImport" Content="Selecionar Categoria" Width="200"                        ></Button>
