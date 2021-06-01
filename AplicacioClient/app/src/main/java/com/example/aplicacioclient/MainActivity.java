@@ -12,10 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private TextView txtErrorLogin;
     private EditText edtUsuari,edtContrasenya;
-
+    private int sesionId;
+    Socket s;
+    ObjectOutputStream oos;
+    ObjectInputStream ois;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_AplicacioClient);
@@ -29,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         caregarPreferencies();
 
         Button btnLogin=findViewById(R.id.Login);
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +66,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean existeixUsuari(String usu,String pass){
-        if(usu.equals("plopez") && pass.equals("plopez")){
+       Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    s = new Socket("192.168.1.45", 9876);
+                    oos = new ObjectOutputStream(s.getOutputStream());
+                    oos.writeInt(1);
+                    ArrayList<String> dadesConexio = new ArrayList<String>();
+                    dadesConexio.add("" + edtUsuari.getText());
+                    dadesConexio.add("" + edtContrasenya.getText());
+                    oos.writeObject(dadesConexio);
+                    sesionId = ois.readInt();
+                    ois = new ObjectInputStream(s.getInputStream());
+                } catch (IOException e) {
+                    Log.d("ERROR", "" + e);
+                }
+            }
+        });
+        thread.start();
+
+        if(sesionId!=-1){
             txtErrorLogin.setVisibility(View.INVISIBLE);
             omplirArxiuPreferencies();
             return true;
@@ -64,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
             txtErrorLogin.setVisibility(View.VISIBLE);
             return false;
         }
+        /*
+        if(usu.equals("plopez") && pass.equals("plopez")){
+            txtErrorLogin.setVisibility(View.INVISIBLE);
+            omplirArxiuPreferencies();
+            return true;
+        }else{
+            txtErrorLogin.setVisibility(View.VISIBLE);
+            return false;
+        }*/
     }
 
     private void omplirArxiuPreferencies(){

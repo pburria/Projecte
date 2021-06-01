@@ -12,10 +12,12 @@ public class Opcio1 {
 
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         InetAddress host = InetAddress.getLocalHost();
+
         Socket socket = null;
         ObjectOutputStream oos = null;
         ObjectInputStream ois = null;
         socket = new Socket(host.getHostName(), 9876);
+        
         oos = new ObjectOutputStream(socket.getOutputStream());
         
         oos.writeInt(1);

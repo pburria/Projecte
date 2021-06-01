@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\cromp\2n DAM\Projecte\ImprimirCarta\ImprimirCarta\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-28T18:00:19.086</Modified>
+      <Modified>2021-05-31T14:18:12.482</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\ImprimirCarta\ImprimirCarta\bin\x86\Debug\ImprimirCarta.exe">
       <PackagePath>entrypoint\ImprimirCarta.exe</PackagePath>
-      <Modified>2021-05-28T18:00:18.206</Modified>
+      <Modified>2021-05-31T14:18:10.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cromp\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -246,7 +246,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\cromp\2n DAM\Projecte\ImprimirCarta\ImprimirCarta\bin\x86\Debug\Core\ImprimirCarta.exe">
       <PackagePath>ImprimirCarta.exe</PackagePath>
-      <Modified>2021-05-28T18:00:19.080</Modified>
+      <Modified>2021-05-31T14:18:12.459</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

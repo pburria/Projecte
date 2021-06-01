@@ -1,10 +1,12 @@
  package com.example.aplicacioclient;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
  public class Taules extends AppCompatActivity {
-     private List<InfoTaula> taules;
-     private RecyclerView recycledTaules;
+     public static List<InfoTaula> taules;
+     public static RecyclerView recycledTaules;
 
 
     @Override
@@ -49,14 +51,5 @@ import java.util.List;
 
         InfoTaulaAdapter adapter=new InfoTaulaAdapter(taules);
         recycledTaules.setAdapter(adapter);
-
-        /*recycledTaules.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if()
-            }
-        });*/
-
-
     }
 }
