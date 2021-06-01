@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.milaifontanals.projecte.Cambrer;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -19,6 +21,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtErrorLogin;
@@ -66,26 +72,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean existeixUsuari(String usu,String pass){
-       Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    s = new Socket("192.168.1.45", 9876);
-                    oos = new ObjectOutputStream(s.getOutputStream());
-                    oos.writeInt(1);
-                    ArrayList<String> dadesConexio = new ArrayList<String>();
-                    dadesConexio.add("" + edtUsuari.getText());
-                    dadesConexio.add("" + edtContrasenya.getText());
-                    oos.writeObject(dadesConexio);
-                    sesionId = ois.readInt();
-                    ois = new ObjectInputStream(s.getInputStream());
-                } catch (IOException e) {
-                    Log.d("ERROR", "" + e);
+        Observable.fromCallable(() -> {
+            try {
+                s = new Socket("192.168.1.45", 9876);
+                oos = new ObjectOutputStream(s.getOutputStream());
+                oos.writeInt(1);
+                ArrayList<String> dadesConexio = new ArrayList<String>();
+                dadesConexio.add("" + edtUsuari.getText());
+                dadesConexio.add("" + edtContrasenya.getText());
+                oos.writeObject(dadesConexio);
+                ois = new ObjectInputStream(s.getInputStream());
+                Log.d("SESSIONN",""+sesionId);
+                sesionId = ois.readInt();
+                if(sesionId!=-1){
+                    Cambrer c=(Cambrer) ois.readObject();
+                    Log.d("Cambrer",c.toString());
                 }
-            }
-        });
-        thread.start();
 
+            } catch (IOException e) {
+                Log.d("ERROR", "" + e);
+            }
+            s.close();
+            return false;
+            })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe((result) -> {
+
+                });
+        Log.d("SESSION",""+sesionId);
         if(sesionId!=-1){
             txtErrorLogin.setVisibility(View.INVISIBLE);
             omplirArxiuPreferencies();
@@ -94,15 +109,7 @@ public class MainActivity extends AppCompatActivity {
             txtErrorLogin.setVisibility(View.VISIBLE);
             return false;
         }
-        /*
-        if(usu.equals("plopez") && pass.equals("plopez")){
-            txtErrorLogin.setVisibility(View.INVISIBLE);
-            omplirArxiuPreferencies();
-            return true;
-        }else{
-            txtErrorLogin.setVisibility(View.VISIBLE);
-            return false;
-        }*/
+
     }
 
     private void omplirArxiuPreferencies(){

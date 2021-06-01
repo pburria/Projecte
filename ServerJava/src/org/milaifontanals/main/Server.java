@@ -207,11 +207,13 @@ public class Server {
                 log.setText(log.getText() + "Usuari correcte " + "\n");
                 int sessio = numeroAleatoriPerSesio(cambrer);
                 oos.writeInt(sessio);
+                System.out.println(sessio);
                 oos.writeObject(cambrer);
             } else {
                 log.setText(log.getText() + "Usuari incorrecte " + "\n");
                 oos.writeInt(-1);
             }
+            
         }
 
         private void getTaules() throws IOException, ClassNotFoundException, SQLException {

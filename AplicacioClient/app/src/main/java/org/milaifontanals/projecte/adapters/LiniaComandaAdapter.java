@@ -33,7 +33,12 @@ public class LiniaComandaAdapter extends RecyclerView.Adapter<LiniaComandaAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         LiniaComanda inf=listLiniaComanda.get(position);
-        Plat plat=listPlat.get(inf.getPlat());
+        Plat plat=null;
+        for(int i=0;i<listPlat.size();i++){
+            if(inf.getPlat()==listPlat.get(i).getCodi()){
+                plat=listPlat.get(i);
+            }
+        }
 
         int qtat=inf.getQtat();
         BigDecimal preu=plat.getPreu();

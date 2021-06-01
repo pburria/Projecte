@@ -7,10 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import org.milaifontanals.projecte.InfoTaula;
 import org.milaifontanals.projecte.LiniaComanda;
 import org.milaifontanals.projecte.Plat;
-import org.milaifontanals.projecte.adapters.InfoTaulaAdapter;
 import org.milaifontanals.projecte.adapters.LiniaComandaAdapter;
 import org.milaifontanals.projecte.adapters.PlatsAdapter;
 
@@ -19,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Comandes extends AppCompatActivity {
-    public static List<LiniaComanda> comandes;
+    public static List<LiniaComanda> liniaComandas;
     public static List<Plat> plats;
     public static RecyclerView recycledComandes;
     public static RecyclerView recycledPlats;
@@ -42,19 +40,19 @@ public class Comandes extends AppCompatActivity {
         LiniaComanda l3=new LiniaComanda(1,6,3,3,true);
         LiniaComanda l4=new LiniaComanda(1,8,4,6,true);
         LiniaComanda l5=new LiniaComanda(1,4,5,2,true);
-        LiniaComanda l6=new LiniaComanda(1,5,6,1,true);
+        /*LiniaComanda l6=new LiniaComanda(1,5,6,1,true);
         LiniaComanda l7=new LiniaComanda(1,7,7,8,true);
-        LiniaComanda l8=new LiniaComanda(1,1,8,8,true);
+        LiniaComanda l8=new LiniaComanda(1,1,8,8,true);*/
 
-        comandes = new ArrayList<LiniaComanda>();
-        comandes.add(l1);
-        comandes.add(l2);
-        comandes.add(l3);
-        comandes.add(l4);
-        comandes.add(l5);
-        comandes.add(l6);
-        comandes.add(l7);
-        comandes.add(l8);
+        liniaComandas = new ArrayList<LiniaComanda>();
+        liniaComandas.add(l1);
+        liniaComandas.add(l2);
+        liniaComandas.add(l3);
+        liniaComandas.add(l4);
+        liniaComandas.add(l5);
+        /*liniaComandas.add(l6);
+        liniaComandas.add(l7);
+        liniaComandas.add(l8);*/
 
         Plat p1=new Plat(1,"Entrecot",new BigDecimal(15.01),5,null);
         Plat p2=new Plat(2,"Pollastre",new BigDecimal(17.61),5,null);
@@ -81,7 +79,7 @@ public class Comandes extends AppCompatActivity {
         recycledComandes.setLayoutManager(new LinearLayoutManager(this));
         recycledComandes.setHasFixedSize(true);
 
-        LiniaComandaAdapter adapter=new LiniaComandaAdapter(comandes,plats);
+        LiniaComandaAdapter adapter=new LiniaComandaAdapter(liniaComandas,plats);
         recycledComandes.setAdapter(adapter);
 
         recycledPlats=findViewById(R.id.RecycledPlats);

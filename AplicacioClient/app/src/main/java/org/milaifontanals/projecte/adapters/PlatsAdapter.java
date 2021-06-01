@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aplicacioclient.Comandes;
 import com.example.aplicacioclient.R;
-import com.example.aplicacioclient.Taules;
 
-import org.milaifontanals.projecte.InfoTaula;
 import org.milaifontanals.projecte.LiniaComanda;
 import org.milaifontanals.projecte.Plat;
 import java.math.BigDecimal;
@@ -74,23 +72,23 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         plat= listPlat.get(getAdapterPosition());
                         boolean trobat=false;
 
-                        for(int i=0;i<Comandes.comandes.size();i++){
-                            if(plat.getCodi()==Comandes.comandes.get(i).getPlat()){
-                                Comandes.comandes.get(i).setQtat(Comandes.comandes.get(i).getQtat()+1);
-                                /*LiniaComanda linia=Comandes.comandes.get(i);
+                        for(int i = 0; i<Comandes.liniaComandas.size(); i++){
+                            if(plat.getCodi()==Comandes.liniaComandas.get(i).getPlat()){
+                                Comandes.liniaComandas.get(i).setQtat(Comandes.liniaComandas.get(i).getQtat()+1);
+                                LiniaComanda linia=Comandes.liniaComandas.get(i);
                                 String nom=plat.getNom();
                                 int codi =plat.getCodi();
                                 int codiPlat=linia.getPlat();
-                                int qtat=linia.getQtat();*/
+                                int qtat=linia.getQtat();
                                 trobat=true;
                                 break;
                             }
                         }
                         if(trobat==false){
-                            LiniaComanda c=new LiniaComanda(0,plat.getCodi(),Comandes.comandes.size()+1,1,false);
-                            Comandes.comandes.add(c);
+                            LiniaComanda c=new LiniaComanda(0,plat.getCodi(),Comandes.liniaComandas.size()+1,1,false);
+                            Comandes.liniaComandas.add(c);
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.comandes,Comandes.plats);
+                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.liniaComandas,Comandes.plats);
                         Comandes.recycledComandes.setAdapter(adapter);
                     }
                 }
@@ -103,13 +101,13 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         Plat plat;
                         plat= listPlat.get(getAdapterPosition());
 
-                        for(int i=0;i<Comandes.comandes.size();i++){
-                            if(plat.getCodi()==Comandes.comandes.get(i).getPlat()){
-                                Comandes.comandes.remove(Comandes.comandes.get(i));
+                        for(int i = 0; i<Comandes.liniaComandas.size(); i++){
+                            if(plat.getCodi()==Comandes.liniaComandas.get(i).getPlat()){
+                                Comandes.liniaComandas.remove(Comandes.liniaComandas.get(i));
                                 break;
                             }
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.comandes,Comandes.plats);
+                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.liniaComandas,Comandes.plats);
                         Comandes.recycledComandes.setAdapter(adapter);
                     }
                 }
