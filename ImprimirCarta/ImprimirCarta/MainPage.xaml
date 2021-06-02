@@ -10,14 +10,16 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <WebView x:Name="webView" Grid.Column="0"></WebView>
-        <StackPanel Orientation="Vertical" Grid.Column="1">
-            <ComboBox x:Name="cmbCategories" Width="100"></ComboBox>
-            <Button x:Name="btnImport" Content="Selecionar Categoria" Width="200" Click="btnImport_Click"></Button>
-            <Button x:Name="btnImprimir" Content="Imprimir" Width="200"></Button>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="20 0 0 0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Categoria: " ></TextBlock>
+                <ComboBox x:Name="cmbCategories" Margin="10 0 0 0" Width="100"></ComboBox>
+            </StackPanel>
+            <Button x:Name="btnImport" Margin="0 20 0 0" Content="Mostrar Carta" Width="200" Click="btnImport_Click"></Button>
         </StackPanel>
         
     </Grid>

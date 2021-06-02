@@ -49,15 +49,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean correcte=existeixUsuari(""+edtUsuari.getText(),""+edtContrasenya.getText());
-                if(correcte){
-                    Intent i=new Intent(MainActivity.this,Taules.class);
-                    i.putExtra("session_id",12345);
-                    startActivity(i);
-                }
-                edtUsuari.setText("");
-                edtContrasenya.setText("");
-
+                existeixUsuari(""+edtUsuari.getText(),""+edtContrasenya.getText());
             }
         });
     }
@@ -71,45 +63,59 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean existeixUsuari(String usu,String pass){
+    private void existeixUsuari(String usu,String pass){
         Observable.fromCallable(() -> {
             try {
-                s = new Socket("192.168.1.45", 9876);
+                //s = new Socket("192.168.1.45", 9876);
+                s = new Socket("192.168.43.213", 9876);
                 oos = new ObjectOutputStream(s.getOutputStream());
                 oos.writeInt(1);
+
                 ArrayList<String> dadesConexio = new ArrayList<String>();
-                dadesConexio.add("" + edtUsuari.getText());
-                dadesConexio.add("" + edtContrasenya.getText());
+                dadesConexio.add(usu);
+                dadesConexio.add(pass);
                 oos.writeObject(dadesConexio);
+
                 ois = new ObjectInputStream(s.getInputStream());
-                Log.d("SESSIONN",""+sesionId);
                 sesionId = ois.readInt();
+                Log.d("SESSIONID",""+sesionId);
+
                 if(sesionId!=-1){
                     Cambrer c=(Cambrer) ois.readObject();
-                    Log.d("Cambrer",c.toString());
                 }
 
             } catch (IOException e) {
                 Log.d("ERROR", "" + e);
+            }finally {
+                if(oos!=null){
+                    oos.flush();
+                    oos.close();
+                }
+                if(ois!=null){
+                    ois.close();
+                }
+                if(s!=null){
+                    s.close();
+                }
             }
-            s.close();
+
             return false;
             })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((result) -> {
-
+                    if(sesionId!=-1){
+                        txtErrorLogin.setVisibility(View.INVISIBLE);
+                        omplirArxiuPreferencies();
+                        Intent i=new Intent(MainActivity.this,Taules.class);
+                        i.putExtra("session_id",sesionId);
+                        startActivity(i);
+                    }else{
+                        txtErrorLogin.setVisibility(View.VISIBLE);
+                        edtUsuari.setText("");
+                        edtContrasenya.setText("");
+                    }
                 });
-        Log.d("SESSION",""+sesionId);
-        if(sesionId!=-1){
-            txtErrorLogin.setVisibility(View.INVISIBLE);
-            omplirArxiuPreferencies();
-            return true;
-        }else{
-            txtErrorLogin.setVisibility(View.VISIBLE);
-            return false;
-        }
-
     }
 
     private void omplirArxiuPreferencies(){

@@ -35,7 +35,14 @@ namespace ImprimirCarta
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
-            webView.Navigate(new Uri(@"http://51.68.224.27:8080/jasperserver/flow.html?_flowId=viewReportFlow&_flowId=viewReportFlow&ParentFolderUri=%2Fdam2-pburria%2FRestaurant&reportUnit=%2Fdam2-pburria%2FRestaurant%2FCarta&standAlone=true&j_username=dam2-pburria&j_password=47110807E&catagoria=1"));                      
+            int categoria=0;
+            if (cmbCategories.SelectedValue != null)
+            {
+                Catagoria cat = (Catagoria)cmbCategories.SelectedValue;
+                categoria = cat.Codi;
+            }
+            
+            webView.Navigate(new Uri(@"http://51.68.224.27:8080/jasperserver/flow.html?_flowId=viewReportFlow&_flowId=viewReportFlow&ParentFolderUri=%2Fdam2-pburria%2FRestaurant&reportUnit=%2Fdam2-pburria%2FRestaurant%2FCarta&standAlone=true&j_username=dam2-pburria&j_password=47110807E&catagoria="+categoria));                      
         }
     }
 }

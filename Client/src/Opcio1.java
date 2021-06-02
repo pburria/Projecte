@@ -37,9 +37,9 @@ public class Opcio1 {
         } else {
             System.out.println("No s'ha trobat el usuari");
         }
-        //ois.readFloat();
-        //ois.close();
-        //oos.close();
+        oos.flush();
+        ois.close();
+        oos.close();
         socket.close();
     }
 
