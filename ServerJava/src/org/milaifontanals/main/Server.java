@@ -49,7 +49,6 @@ public class Server {
     private ServerSocket serverSocket;
     private int port = 9876;
     private HashMap<Integer, Cambrer> sessions;
-    private Socket socket = null;
 
     public static void main(String[] args) {
         try {
@@ -151,11 +150,6 @@ public class Server {
             } catch (SQLException ex) {
                 log.setText(log.getText() + "ERROR" + ex + "\n");
             }
-            try {
-                socket.close();
-            } catch (IOException ex) {
-                log.setText(log.getText() + "ERROR" + ex + "\n");
-            }
         }
     }
 
@@ -164,7 +158,7 @@ public class Server {
         public void run() {
             try {
                 while (!stopServer) {
-                    socket = serverSocket.accept();
+                    Socket socket = serverSocket.accept();
 
                     Thread t = new Thread(new Runnable() {
                         @Override
@@ -215,15 +209,9 @@ public class Server {
             }
 
         } finally {
-            if(oos!=null){
-                oos.close();
-            }
-            if(ois!=null){
-                ois.close();
-            }
-            if(socket!=null){
+            if (socket != null) {
                 socket.close();
-            }     
+            }
         }
     }
 
@@ -241,8 +229,9 @@ public class Server {
         Cambrer cambrer = existeixUser(user, password);
 
         if (cambrer != null) {
-            log.setText(log.getText() + "Usuari correcte " + "\n");
+
             int sessio = numeroAleatoriPerSesio(cambrer);
+            log.setText(log.getText() + "Usuari correcte " + sessio + "\n");
             oos.writeInt(sessio);
             oos.writeObject(cambrer);
         } else {
@@ -253,9 +242,13 @@ public class Server {
 
     private void getTaules(ObjectOutputStream oos, ObjectInputStream ois) throws IOException, ClassNotFoundException, SQLException {
         int sessio = ois.readInt();
+        log.setText(log.getText() + "Sessio rebuda: " + sessio + "\n");
+
         if (sessions.containsKey(sessio)) {
             ArrayList<InfoTaula> taules = new ArrayList<>();
             taules = getTotesTaules(sessions.get(sessio));
+            log.setText(log.getText() + "Taules: " + taules + "\n");
+            System.out.println(taules);
             if (taules != null) {
                 oos.writeInt(taules.size());
                 oos.writeObject(taules);
@@ -384,7 +377,8 @@ public class Server {
                 + " count(li.PLAT) as plats_preparats,ca.nom as nom_cambrer\n"
                 + "from comanda co join linia_comanda li on co.codi=li.comanda join\n"
                 + "cambrer ca on co.cambrer=ca.codi \n"
-                + "where co.taula=? and li.ACABAT=true";
+                + "where co.taula=? and li.ACABAT=true\n"
+                + "group by co.codi";
         PreparedStatement psLin = con.prepareStatement(consulta);
         ArrayList<InfoTaula> info = new ArrayList<>();
         Statement st = con.createStatement();
@@ -395,7 +389,7 @@ public class Server {
             psLin.setInt(1, codiTaula);
             psLin.setInt(2, codiTaula);
             infoTaula = psLin.executeQuery();
-            while (infoTaula.next()) {
+            if (infoTaula.next()) {
                 boolean es_meva;
                 int codi = infoTaula.getInt("codi");
                 int codiCambrer = infoTaula.getInt("cambrer");
@@ -412,7 +406,11 @@ public class Server {
                 }
                 InfoTaula inf = new InfoTaula(codiTaula, codi, es_meva, platsTotals, platsPreparats, nomCambrer);
                 info.add(inf);
+            } else {
+                InfoTaula inf = new InfoTaula(codiTaula, -1, false, 0, 0, null);
+                info.add(inf);
             }
+
         }
         return info;
     }

@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import org.milaifontanals.projecte.Cambrer;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -27,9 +25,12 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
+    //s = new Socket("192.168.1.45", 9876);
+    public static String ip="192.168.43.213";
+    public static  int port=9876;
     private TextView txtErrorLogin;
     private EditText edtUsuari,edtContrasenya;
-    private int sesionId;
+    public static int sesionId;
     Socket s;
     ObjectOutputStream oos;
     ObjectInputStream ois;
@@ -60,40 +61,30 @@ public class MainActivity extends AppCompatActivity {
             edtUsuari.setText(loginGuardat.getString("usuari",""));
             edtContrasenya.setText(loginGuardat.getString("password",""));
         }
-
     }
 
     private void existeixUsuari(String usu,String pass){
+        sesionId = -1;
         Observable.fromCallable(() -> {
             try {
-                //s = new Socket("192.168.1.45", 9876);
-                s = new Socket("192.168.43.213", 9876);
+                s = new Socket(ip,port);
                 oos = new ObjectOutputStream(s.getOutputStream());
+                ois = new ObjectInputStream(s.getInputStream());
+
                 oos.writeInt(1);
 
                 ArrayList<String> dadesConexio = new ArrayList<String>();
                 dadesConexio.add(usu);
                 dadesConexio.add(pass);
                 oos.writeObject(dadesConexio);
-
-                ois = new ObjectInputStream(s.getInputStream());
                 sesionId = ois.readInt();
-                Log.d("SESSIONID",""+sesionId);
 
                 if(sesionId!=-1){
                     Cambrer c=(Cambrer) ois.readObject();
                 }
 
             } catch (IOException e) {
-                Log.d("ERROR", "" + e);
             }finally {
-                if(oos!=null){
-                    oos.flush();
-                    oos.close();
-                }
-                if(ois!=null){
-                    ois.close();
-                }
                 if(s!=null){
                     s.close();
                 }
@@ -108,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                         txtErrorLogin.setVisibility(View.INVISIBLE);
                         omplirArxiuPreferencies();
                         Intent i=new Intent(MainActivity.this,Taules.class);
-                        i.putExtra("session_id",sesionId);
                         startActivity(i);
                     }else{
                         txtErrorLogin.setVisibility(View.VISIBLE);
