@@ -165,6 +165,8 @@ public class InfoTaulaAdapter extends RecyclerView.Adapter<InfoTaulaAdapter.View
                     .subscribe((result) -> {
                         InfoTaulaAdapter.this.notifyItemChanged(result);
 
+
+
                     });
         }
     }

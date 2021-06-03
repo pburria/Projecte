@@ -24,10 +24,12 @@ import java.util.List;
 public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> {
     private List<Plat> listPlat;
     private List<LiniaComanda> listLineaComanda;
+    private Comandes activityComanda;
 
-    public PlatsAdapter(List<Plat> llistaPlat,List<LiniaComanda> llistaLineaComanda){
+    public PlatsAdapter(List<Plat> llistaPlat,List<LiniaComanda> llistaLineaComanda,Comandes c){
         listPlat=llistaPlat;
         listLineaComanda=llistaLineaComanda;
+        this.activityComanda=c;
     }
 
     @NonNull
@@ -79,8 +81,9 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         Plat plat;
                         plat= listPlat.get(getAdapterPosition());
                         boolean trobat=false;
+                        int i;
 
-                        for(int i = 0; i<listLineaComanda.size(); i++){
+                        for(i = 0; i<listLineaComanda.size(); i++){
                             if(plat.getCodi()==listLineaComanda.get(i).getPlat()){
                                 listLineaComanda.get(i).setQtat(listLineaComanda.get(i).getQtat()+1);
                                 LiniaComanda linia=listLineaComanda.get(i);
@@ -95,9 +98,10 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         if(trobat==false){
                             LiniaComanda c=new LiniaComanda(0,plat.getCodi(),listLineaComanda.size()+1,1,false);
                             listLineaComanda.add(c);
+                            activityComanda.afegirPlat(listLineaComanda.size()-1);
+                        }else{
+                            activityComanda.actualitzarPlat(i);
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(listLineaComanda,listPlat);
-                        Comandes.recycledComandes.setAdapter(adapter);
                     }
                 }
             });
@@ -112,11 +116,13 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         for(int i = 0; i<listLineaComanda.size(); i++){
                             if(plat.getCodi()==listLineaComanda.get(i).getPlat()){
                                 listLineaComanda.remove(listLineaComanda.get(i));
+                                activityComanda.eliminarPlat(i);
                                 break;
                             }
+
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(listLineaComanda,listPlat);
-                        Comandes.recycledComandes.setAdapter(adapter);
+
+
                     }
                 }
             });

@@ -4,7 +4,6 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>org.milaifontanals.projecte.Categoria</class>
     <class>org.milaifontanals.projecte.Ingredient</class>
-    <class>org.milaifontanals.projecte.LiniaComanda</class>
     <class>org.milaifontanals.projecte.LiniaEscandall</class>
     <class>org.milaifontanals.projecte.Plat</class>
     <class>org.milaifontanals.projecte.Unitat</class>
@@ -15,7 +14,6 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>org.milaifontanals.projecte.Categoria</class>
     <class>org.milaifontanals.projecte.Ingredient</class>
-    <class>org.milaifontanals.projecte.LiniaComanda</class>
     <class>org.milaifontanals.projecte.LiniaEscandall</class>
     <class>org.milaifontanals.projecte.Plat</class>
     <class>org.milaifontanals.projecte.Unitat</class>

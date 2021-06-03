@@ -1,19 +1,12 @@
  package com.example.aplicacioclient;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 
-import org.milaifontanals.projecte.Cambrer;
 import org.milaifontanals.projecte.InfoTaula;
 import org.milaifontanals.projecte.adapters.InfoTaulaAdapter;
 
@@ -23,6 +16,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
@@ -41,6 +36,15 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taules);
         getTaules(MainActivity.sesionId);
+
+        Timer timer = new Timer();
+        class actualitzarTaules extends TimerTask {
+            public void run() {
+                getTaules(MainActivity.sesionId);
+            }
+        }
+        TimerTask actualitzarTaules = new actualitzarTaules();
+        timer.scheduleAtFixedRate(actualitzarTaules, 10000, 10000);
     }
 
     private void getTaules(int sessio){
@@ -76,14 +80,17 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((result) -> {
+
                     recycledTaules=findViewById(R.id.RecycledTaules);
                     recycledTaules.setLayoutManager(new GridLayoutManager(this,3));
                     recycledTaules.setHasFixedSize(true);
-
-                    InfoTaulaAdapter adapter=new InfoTaulaAdapter(taules);
-                    recycledTaules.setAdapter(adapter);
-
+                    CrearAdapter();
                 });
 
+    }
+
+      private void CrearAdapter(){
+        InfoTaulaAdapter adapter=new InfoTaulaAdapter(taules);
+        recycledTaules.setAdapter(adapter);
     }
 }

@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.milaifontanals.projecte.Categoria;
@@ -39,8 +41,8 @@ public class Comandes extends AppCompatActivity {
     private  List<LiniaComanda> liniaComandas;
     private List<Plat> plats;
     private List<Categoria> categories;
-    public static RecyclerView recycledComandes;
-    public static RecyclerView recycledPlats;
+    private  RecyclerView recycledComandes;
+    private  RecyclerView recycledPlats;
     public static boolean editable;
     private int comanda;
     private int taula;
@@ -48,6 +50,7 @@ public class Comandes extends AppCompatActivity {
     ObjectOutputStream oos,oos1,oos2;
     ObjectInputStream ois,ois1,ois2;
     Button btnConfirm;
+    LiniaComandaAdapter liniaComandaAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +136,7 @@ public class Comandes extends AppCompatActivity {
                     recycledPlats.setLayoutManager(new GridLayoutManager(this,3));
                     recycledPlats.setHasFixedSize(true);
 
-                    PlatsAdapter adapterPlat=new PlatsAdapter(plats,liniaComandas);
+                    PlatsAdapter adapterPlat=new PlatsAdapter(plats,liniaComandas,this);
                     recycledPlats.setAdapter(adapterPlat);
                     gestioCategories();
 
@@ -141,8 +144,8 @@ public class Comandes extends AppCompatActivity {
                     recycledComandes.setLayoutManager(new LinearLayoutManager(this));
                     recycledComandes.setHasFixedSize(true);
 
-                    LiniaComandaAdapter adapter=new LiniaComandaAdapter(liniaComandas,plats);
-                    recycledComandes.setAdapter(adapter);
+                    liniaComandaAdapter=new LiniaComandaAdapter(liniaComandas,plats);
+                    recycledComandes.setAdapter(liniaComandaAdapter);
 
                     TextView total=findViewById(R.id.txtTotalComanda);
                     BigDecimal totall=new BigDecimal(0);
@@ -203,17 +206,21 @@ public class Comandes extends AppCompatActivity {
                 });
     }
 
+    public void afegirPlat(int index){
+        liniaComandaAdapter.notifyItemInserted(index);
+    }
+    public void actualitzarPlat(int index){
+        liniaComandaAdapter.notifyItemChanged(index);
+    }
+    public void eliminarPlat(int index){
+        liniaComandaAdapter.notifyItemRemoved(index);
+    }
+
     private void gestioCategories(){
-        Button btn1=findViewById(R.id.btnCat1);
-        Button btn2=findViewById(R.id.btnCat2);
-        Button btn3=findViewById(R.id.btnCat3);
-        Button btn4=findViewById(R.id.btnCat4);
-        Button btn5=findViewById(R.id.btnCat5);
-        btn1.setText(""+categories.get(0).getNom());
-        btn2.setText(""+categories.get(1).getNom());
-        btn3.setText(""+categories.get(2).getNom());
-        btn4.setText(""+categories.get(3).getNom());
-        btn5.setText(""+categories.get(4).getNom());
+        Spinner s=findViewById(R.id.spinner);
+        ArrayAdapter<Categoria> adapterCat=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,categories);
+        s.setAdapter(adapterCat);
+
     }
 
 }

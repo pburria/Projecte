@@ -70,6 +70,7 @@ public class Server {
         try {
             con = DriverManager.getConnection(url, user, password);
             con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
             System.out.println("CONEXIÓ CREADA");
             crearGUI();
 
@@ -264,6 +265,7 @@ public class Server {
             ArrayList<Plat> plats = new ArrayList<>();
             categories = getCategories();
             plats = getPlats();
+
             log.setText(log.getText() + "Categories: " + categories + "\n");
             log.setText(log.getText() + "Plats: " + plats + "\n");
 
@@ -404,7 +406,7 @@ public class Server {
                 } else {
                     es_meva = false;
                 }
-                if (platsPreparats==0 && platsTotals==0) {
+                if (platsPreparats == platsTotals) {
                     codi = -1;
                 }
                 InfoTaula inf = new InfoTaula(codiTaula, codi, es_meva, platsTotals, platsPreparats, nomCambrer);
