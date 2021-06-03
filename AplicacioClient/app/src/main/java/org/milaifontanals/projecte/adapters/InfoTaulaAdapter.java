@@ -70,6 +70,7 @@ public class InfoTaulaAdapter extends RecyclerView.Adapter<InfoTaulaAdapter.View
         if(inf.getCodi_comanda()==-1){
             holder.progressBar.setVisibility(View.INVISIBLE);
             holder.itemView.setBackgroundColor(Color.WHITE);
+            holder.txtNomCambrer.setText("");
         }
     }
 
@@ -95,6 +96,7 @@ public class InfoTaulaAdapter extends RecyclerView.Adapter<InfoTaulaAdapter.View
                     taulaSelec= listInfoTaules.get(getAdapterPosition());
                     Intent intent =  new Intent(v.getContext(), Comandes.class);
                     intent.putExtra("comanda",taulaSelec.getCodi_comanda());
+                    intent.putExtra("taula",taulaSelec.getNum());
                     v.getContext().startActivity(intent);
                 }
             });

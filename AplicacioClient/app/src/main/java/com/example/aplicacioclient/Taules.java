@@ -56,7 +56,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
                 oos.writeInt(sessio);
                 oos.flush();
 
-
                 int numTaules = ois.readInt();
 
                 if(numTaules!=-1){

@@ -1,9 +1,12 @@
 package org.milaifontanals.projecte.adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -20,9 +23,11 @@ import java.util.List;
 
 public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> {
     private List<Plat> listPlat;
+    private List<LiniaComanda> listLineaComanda;
 
-    public PlatsAdapter(List<Plat> llistaPlat){
+    public PlatsAdapter(List<Plat> llistaPlat,List<LiniaComanda> llistaLineaComanda){
         listPlat=llistaPlat;
+        listLineaComanda=llistaLineaComanda;
     }
 
     @NonNull
@@ -41,7 +46,9 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
         DecimalFormat format = new DecimalFormat();
         format.setMaximumFractionDigits(2);
 
-        holder.LinearPlat.setBackgroundResource(R.drawable.bg);
+        Bitmap img=BitmapFactory.decodeByteArray(plat.getFoto(), 0, plat.getMidaFoto());
+
+        holder.imgPlat.setImageBitmap(img);
         holder.txtPreuPlat.setText(""+format.format(preu)+"€");
         holder.txtNomPlat2.setText(""+plat.getNom());
     }
@@ -55,6 +62,7 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
         public TextView txtNomPlat2,txtPreuPlat;
         public Button btnAfegir,btnCancelar;
         public LinearLayout LinearPlat;
+        public ImageView imgPlat;
 
         public ViewHolder(@NonNull View fila) {
             super(fila);
@@ -62,7 +70,7 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
             txtPreuPlat=fila.findViewById(R.id.txtPreuPlat);
             btnAfegir=fila.findViewById(R.id.btnAfegir);
             btnCancelar=fila.findViewById(R.id.btnCancelar);
-            LinearPlat=fila.findViewById(R.id.LinearPlat);
+            imgPlat=fila.findViewById(R.id.imgPlat);
 
             btnAfegir.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -72,10 +80,10 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         plat= listPlat.get(getAdapterPosition());
                         boolean trobat=false;
 
-                        for(int i = 0; i<Comandes.liniaComandas.size(); i++){
-                            if(plat.getCodi()==Comandes.liniaComandas.get(i).getPlat()){
-                                Comandes.liniaComandas.get(i).setQtat(Comandes.liniaComandas.get(i).getQtat()+1);
-                                LiniaComanda linia=Comandes.liniaComandas.get(i);
+                        for(int i = 0; i<listLineaComanda.size(); i++){
+                            if(plat.getCodi()==listLineaComanda.get(i).getPlat()){
+                                listLineaComanda.get(i).setQtat(listLineaComanda.get(i).getQtat()+1);
+                                LiniaComanda linia=listLineaComanda.get(i);
                                 String nom=plat.getNom();
                                 int codi =plat.getCodi();
                                 int codiPlat=linia.getPlat();
@@ -85,10 +93,10 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                             }
                         }
                         if(trobat==false){
-                            LiniaComanda c=new LiniaComanda(0,plat.getCodi(),Comandes.liniaComandas.size()+1,1,false);
-                            Comandes.liniaComandas.add(c);
+                            LiniaComanda c=new LiniaComanda(0,plat.getCodi(),listLineaComanda.size()+1,1,false);
+                            listLineaComanda.add(c);
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.liniaComandas,Comandes.plats);
+                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(listLineaComanda,listPlat);
                         Comandes.recycledComandes.setAdapter(adapter);
                     }
                 }
@@ -101,13 +109,13 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
                         Plat plat;
                         plat= listPlat.get(getAdapterPosition());
 
-                        for(int i = 0; i<Comandes.liniaComandas.size(); i++){
-                            if(plat.getCodi()==Comandes.liniaComandas.get(i).getPlat()){
-                                Comandes.liniaComandas.remove(Comandes.liniaComandas.get(i));
+                        for(int i = 0; i<listLineaComanda.size(); i++){
+                            if(plat.getCodi()==listLineaComanda.get(i).getPlat()){
+                                listLineaComanda.remove(listLineaComanda.get(i));
                                 break;
                             }
                         }
-                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(Comandes.liniaComandas,Comandes.plats);
+                        LiniaComandaAdapter adapter=new LiniaComandaAdapter(listLineaComanda,listPlat);
                         Comandes.recycledComandes.setAdapter(adapter);
                     }
                 }

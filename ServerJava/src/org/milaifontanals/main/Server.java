@@ -242,13 +242,11 @@ public class Server {
 
     private void getTaules(ObjectOutputStream oos, ObjectInputStream ois) throws IOException, ClassNotFoundException, SQLException {
         int sessio = ois.readInt();
-        log.setText(log.getText() + "Sessio rebuda: " + sessio + "\n");
 
         if (sessions.containsKey(sessio)) {
             ArrayList<InfoTaula> taules = new ArrayList<>();
             taules = getTotesTaules(sessions.get(sessio));
             log.setText(log.getText() + "Taules: " + taules + "\n");
-            System.out.println(taules);
             if (taules != null) {
                 oos.writeInt(taules.size());
                 oos.writeObject(taules);
@@ -266,12 +264,15 @@ public class Server {
             ArrayList<Plat> plats = new ArrayList<>();
             categories = getCategories();
             plats = getPlats();
+            log.setText(log.getText() + "Categories: " + categories + "\n");
+            log.setText(log.getText() + "Plats: " + plats + "\n");
+
             if (categories != null && plats != null) {
                 oos.writeInt(categories.size());
                 oos.writeObject(categories);
                 oos.writeInt(plats.size());
                 oos.writeObject(plats);
-                log.setText(log.getText() + "Cartas enviades" + "\n");
+                log.setText(log.getText() + "Carta enviada" + "\n");
             } else {
                 oos.writeInt(-1);
             }
@@ -284,6 +285,8 @@ public class Server {
             int codiComanda = ois.readInt();
             ArrayList<LiniaComanda> liniasComanda = new ArrayList<>();
             liniasComanda = getLiniesComanda(codiComanda);
+            log.setText(log.getText() + "Linies Comanda: " + liniasComanda + "\n");
+
             if (liniasComanda != null) {
                 oos.writeInt(liniasComanda.size());
                 oos.writeObject(liniasComanda);
@@ -303,7 +306,7 @@ public class Server {
             int numLiniaComanda = ois.readInt();
             ArrayList<LiniaComanda> liniesComanda = new ArrayList<>();
             liniesComanda = (ArrayList<LiniaComanda>) ois.readObject();
-            Cambrer c = new Cambrer(1, "Pere", "Lopez", "Garcia", "plopez", "plopez");
+            Cambrer c = (Cambrer) ois.readObject();
             int a = insertComanda(taula, c, codiComanda);
             int b = insertLiniaComanda(liniesComanda, codiComanda);
             if (b > 0 && a == 1) {
@@ -373,11 +376,11 @@ public class Server {
     private ArrayList<InfoTaula> getTotesTaules(Cambrer c) throws SQLException {
         String consulta = "select co.codi as codi ,cambrer,(select count(lii.plat) from linia_comanda lii\n"
                 + " join comanda coo on \n"
-                + "lii.COMANDA=coo.codi where coo.taula=?) as plats_totals,\n"
-                + " count(li.PLAT) as plats_preparats,ca.nom as nom_cambrer\n"
+                + "lii.COMANDA=coo.codi where coo.taula=? and lii.ACABAT=true) as plats_preparats,\n"
+                + " count(li.PLAT) as plats_totals,ca.nom as nom_cambrer\n"
                 + "from comanda co join linia_comanda li on co.codi=li.comanda join\n"
                 + "cambrer ca on co.cambrer=ca.codi \n"
-                + "where co.taula=? and li.ACABAT=true\n"
+                + "where co.taula=? \n"
                 + "group by co.codi";
         PreparedStatement psLin = con.prepareStatement(consulta);
         ArrayList<InfoTaula> info = new ArrayList<>();
@@ -401,7 +404,7 @@ public class Server {
                 } else {
                     es_meva = false;
                 }
-                if (platsPreparats == platsTotals) {
+                if (platsPreparats==0 && platsTotals==0) {
                     codi = -1;
                 }
                 InfoTaula inf = new InfoTaula(codiTaula, codi, es_meva, platsTotals, platsPreparats, nomCambrer);

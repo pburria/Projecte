@@ -25,9 +25,10 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
-    //s = new Socket("192.168.1.45", 9876);
-    public static String ip="192.168.43.213";
+    //public static String ip="192.168.43.213";
+    public static String ip="192.168.1.45";
     public static  int port=9876;
+    public static Cambrer c;
     private TextView txtErrorLogin;
     private EditText edtUsuari,edtContrasenya;
     public static int sesionId;
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 sesionId = ois.readInt();
 
                 if(sesionId!=-1){
-                    Cambrer c=(Cambrer) ois.readObject();
+                    c=(Cambrer) ois.readObject();
                 }
 
             } catch (IOException e) {

@@ -56,8 +56,16 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecycledComanda"
             android:layout_width="match_parent"
-            android:layout_height="210dp" />
-
+            android:layout_height="170dp" />
+        <TextView
+            android:id="@+id/txtTotalComanda"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="30dp"
+            android:textSize="18dp">
+        </TextView>
         <Button
             android:id="@+id/btnGardarComanda"
             android:layout_width="120dp"
@@ -69,14 +77,67 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="Guardar">
-
         </Button>
 
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecycledPlats"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/LinearCategories"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnCat1"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:textSize="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="@color/black"
+                ></Button>
+            <Button
+                android:id="@+id/btnCat2"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:textSize="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="@color/black"
+                ></Button>
+            <Button
+                android:id="@+id/btnCat3"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:textSize="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="@color/black"
+                ></Button>
+            <Button
+                android:id="@+id/btnCat4"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:textSize="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="@color/black"
+                ></Button>
+            <Button
+                android:id="@+id/btnCat5"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:textSize="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="@color/black"
+                ></Button>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecycledPlats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
